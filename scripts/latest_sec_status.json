@@ -1,0 +1,22 @@
+{
+  "lastCheckedUtc": "2026-08-27T09:45:55.620760+00:00",
+  "totalMonitored": 10,
+  "latestFilings": [
+    {
+      "ticker": "NVDA",
+      "companyName": "Nvidia Corp",
+      "form": "8-K",
+      "filingDate": "2026-08-26",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm",
+      "accession": "0001045810-26-000073"
+    },
+    {
+      "ticker": "TSM",
+      "companyName": "TSMC (ADR)",
+      "form": "6-K",
+      "filingDate": "2026-08-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000545/tsm-monthend6kx20260825.htm",
+      "accession": "0001046179-26-000545"
+    }
+  ]
+}

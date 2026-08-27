@@ -1,0 +1,350 @@
+{
+  "SONY": {
+    "ticker": "SONY",
+    "name": "Sony Group Corp",
+    "cik": "0000313838",
+    "latestFilings": [
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-08-12",
+        "reportDate": "2026-08-12",
+        "accessionNumber": "0001104659-26-094573",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926094573/tm2622562d1_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-08-11",
+        "reportDate": "2026-08-11",
+        "accessionNumber": "0001104659-26-093634",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926093634/tm2622696d1_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-08-05",
+        "reportDate": "2026-08-05",
+        "accessionNumber": "0001104659-26-090869",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926090869/tm2622169d1_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-07-31",
+        "reportDate": "2026-07-31",
+        "accessionNumber": "0001104659-26-088922",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926088922/tm2621477d2_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-07-31",
+        "reportDate": "2026-07-31",
+        "accessionNumber": "0001104659-26-088915",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926088915/tm2621477d1_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-07-17",
+        "reportDate": "2026-07-17",
+        "accessionNumber": "0001104659-26-084484",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926084484/tm2620665d1_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-07-14",
+        "reportDate": "2026-07-14",
+        "accessionNumber": "0001104659-26-083379",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926083379/tm2620140d1_6k.htm"
+      },
+      {
+        "companyName": "Sony Group Corp",
+        "cik": "0000313838",
+        "form": "6-K",
+        "filingDate": "2026-07-06",
+        "reportDate": "2026-07-03",
+        "accessionNumber": "0001104659-26-080518",
+        "description": "FORM 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/313838/000110465926080518/tm2619284d2_6k.htm"
+      }
+    ]
+  },
+  "AAPL": {
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "cik": "0000320193",
+    "latestFilings": [
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2026-07-30",
+        "reportDate": "2026-07-30",
+        "accessionNumber": "0000320193-26-000018",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2026-04-30",
+        "reportDate": "2026-04-30",
+        "accessionNumber": "0000320193-26-000011",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2026-04-20",
+        "reportDate": "2026-04-17",
+        "accessionNumber": "0001140361-26-015711",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126015711/ef20071035_8k.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2026-02-24",
+        "reportDate": "2026-02-24",
+        "accessionNumber": "0001140361-26-006577",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2026-01-29",
+        "reportDate": "2026-01-29",
+        "accessionNumber": "0000320193-26-000005",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "DEF 14A",
+        "filingDate": "2026-01-08",
+        "reportDate": "2026-02-24",
+        "accessionNumber": "0001308179-26-000008",
+        "description": "DEFINITIVE PROXY STATEMENT",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000130817926000008/aapl014016-def14a.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2026-01-02",
+        "reportDate": "2025-12-30",
+        "accessionNumber": "0001140361-26-000199",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126000199/ef20060722_8k.htm"
+      },
+      {
+        "companyName": "Apple Inc.",
+        "cik": "0000320193",
+        "form": "8-K",
+        "filingDate": "2025-12-05",
+        "reportDate": "2025-12-04",
+        "accessionNumber": "0001140361-25-044561",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125044561/ef20060722_8k.htm"
+      }
+    ]
+  },
+  "NVDA": {
+    "ticker": "NVDA",
+    "name": "Nvidia Corp",
+    "cik": "0001045810",
+    "latestFilings": [
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "8-K",
+        "filingDate": "2026-08-26",
+        "reportDate": "2026-08-26",
+        "accessionNumber": "0001045810-26-000073",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "8-K",
+        "filingDate": "2026-08-17",
+        "reportDate": "2026-08-17",
+        "accessionNumber": "0001045810-26-000069",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "13F-HR",
+        "filingDate": "2026-08-14",
+        "reportDate": "2026-06-30",
+        "accessionNumber": "0001045810-26-000065",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000065/xslForm13F_X02/primary_doc.xml"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "8-K",
+        "filingDate": "2026-07-02",
+        "reportDate": "2026-06-28",
+        "accessionNumber": "0001045810-26-000060",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "8-K",
+        "filingDate": "2026-06-30",
+        "reportDate": "2026-06-24",
+        "accessionNumber": "0001045810-26-000056",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "8-K",
+        "filingDate": "2026-06-18",
+        "reportDate": "2026-06-15",
+        "accessionNumber": "0001193125-26-275783",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "8-K",
+        "filingDate": "2026-05-20",
+        "reportDate": "2026-05-20",
+        "accessionNumber": "0001045810-26-000051",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm"
+      },
+      {
+        "companyName": "NVIDIA CORP",
+        "cik": "0001045810",
+        "form": "13F-HR",
+        "filingDate": "2026-05-15",
+        "reportDate": "2026-03-31",
+        "accessionNumber": "0001045810-26-000042",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000042/xslForm13F_X02/primary_doc.xml"
+      }
+    ]
+  },
+  "BLACKROCK": {
+    "ticker": "BLACKROCK",
+    "name": "BlackRock, Inc.",
+    "cik": "0001364742",
+    "latestFilings": [
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "8-K",
+        "filingDate": "2024-10-01",
+        "reportDate": "2024-10-01",
+        "accessionNumber": "0001193125-24-229654",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000119312524229654/d856279d8k.htm"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "8-K",
+        "filingDate": "2024-09-13",
+        "reportDate": "2024-09-13",
+        "accessionNumber": "0001193125-24-218880",
+        "description": "8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000119312524218880/d878944d8k.htm"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "SC 13G",
+        "filingDate": "2024-09-10",
+        "reportDate": "",
+        "accessionNumber": "0001086364-24-008648",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008648/ca1520061021_091024.txt"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "SC 13G",
+        "filingDate": "2024-09-10",
+        "reportDate": "",
+        "accessionNumber": "0001086364-24-008623",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008623/us1271903049_091024.txt"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "SC 13G",
+        "filingDate": "2024-09-10",
+        "reportDate": "",
+        "accessionNumber": "0001086364-24-008616",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008616/us4571871023_091024.txt"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "SC 13G",
+        "filingDate": "2024-09-10",
+        "reportDate": "",
+        "accessionNumber": "0001086364-24-008638",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008638/us46438g6200_091024.txt"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "SC 13G",
+        "filingDate": "2024-09-10",
+        "reportDate": "",
+        "accessionNumber": "0001086364-24-008633",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008633/us83088m1027_091024.txt"
+      },
+      {
+        "companyName": "BlackRock Finance, Inc.",
+        "cik": "0001364742",
+        "form": "SC 13G",
+        "filingDate": "2024-09-10",
+        "reportDate": "",
+        "accessionNumber": "0001086364-24-008622",
+        "description": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008622/us46434v8862_091024.txt"
+      }
+    ]
+  }
+}
