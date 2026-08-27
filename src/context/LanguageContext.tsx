@@ -11,6 +11,12 @@ interface LanguageContextType {
 
 const STORAGE_KEY = 'capgazer_user_lang';
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 const getInitialLanguage = (): Language => {
   if (typeof window === 'undefined') return 'en';
   
@@ -38,6 +44,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, lang);
+      // Google Analytics (GA4) に言語設定イベントを送信
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        window.gtag('event', 'language_set', {
+          language: lang
+        });
+      }
     } catch {
       // ignore storage errors
     }
