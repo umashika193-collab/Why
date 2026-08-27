@@ -8,8 +8,13 @@ import { DetailModal } from './components/DetailModal';
 import { AboutModal } from './components/AboutModal';
 import { trackerItemsData } from './data/mockData';
 import type { CategoryType, TrackerItem } from './types/tracker';
+import { useLanguage } from './context/LanguageContext';
+import { translations } from './locales/translations';
 
 export function App() {
+  const { lang, isJa } = useLanguage();
+  const t = translations[lang];
+
   const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
   const [selectedItem, setSelectedItem] = useState<TrackerItem | null>(null);
   const [isAboutOpen, setIsAboutOpen] = useState<boolean>(false);
@@ -17,16 +22,16 @@ export function App() {
   const [activeMainTab, setActiveMainTab] = useState<'inflows' | 'matrix' | 'feed'>('inflows');
 
   const categories: { id: CategoryType; label: string; count: number }[] = [
-    { id: 'all', label: 'ALL SECTORS', count: trackerItemsData.length },
+    { id: 'all', label: isJa ? '全セクター' : 'ALL SECTORS', count: trackerItemsData.length },
     { id: 'tech', label: 'AI & REGULATION', count: trackerItemsData.filter(i => i.category === 'tech').length },
-    { id: 'gaming', label: 'GAMING / ENTERTAINMENT', count: trackerItemsData.filter(i => i.category === 'gaming').length },
-    { id: 'governance', label: 'TAKEOVER & BUYBACK', count: trackerItemsData.filter(i => i.category === 'governance').length },
+    { id: 'gaming', label: 'GAMING / MEDIA', count: trackerItemsData.filter(i => i.category === 'gaming').length },
+    { id: 'governance', label: 'TAKEOVER & CAPITAL', count: trackerItemsData.filter(i => i.category === 'governance').length },
     { id: 'macro_finance', label: 'DEFENSE & PENSION', count: trackerItemsData.filter(i => i.category === 'macro_finance').length },
     { id: 'energy', label: 'SCOPE 3 & ENERGY', count: trackerItemsData.filter(i => i.category === 'energy').length },
     { id: 'supply_chain', label: 'CHIPS & RESHORING', count: trackerItemsData.filter(i => i.category === 'supply_chain').length },
   ];
 
-  // フィルタリング処理（カテゴリ選択のみで極めてシンプル）
+  // フィルタリング処理
   const filteredItems = useMemo(() => {
     return trackerItemsData.filter((item) => {
       return activeCategory === 'all' || item.category === activeCategory;
@@ -55,7 +60,7 @@ export function App() {
                   : 'border-terminal-border text-terminal-muted hover:text-terminal-text bg-terminal-bg'
               }`}
             >
-              [ 01. 資金流入上位セクター ]
+              {t.tabInflows}
             </button>
 
             <button
@@ -66,7 +71,7 @@ export function App() {
                   : 'border-terminal-border text-terminal-muted hover:text-terminal-text bg-terminal-bg'
               }`}
             >
-              [ 02. 主要運用会社 ＆ 保有マトリクス ]
+              {t.tabMatrix}
             </button>
 
             <button
@@ -77,7 +82,7 @@ export function App() {
                   : 'border-terminal-border text-terminal-muted hover:text-terminal-text bg-terminal-bg'
               }`}
             >
-              [ 03. 政策 ＆ 産業インパクト・フィード ({filteredItems.length}) ]
+              {t.tabFeed} ({filteredItems.length})
             </button>
           </div>
         </div>
@@ -102,10 +107,10 @@ export function App() {
                   DISCLOSURE & REGULATORY FEED
                 </div>
                 <h2 className="text-lg sm:text-xl font-serif text-white font-normal">
-                  アジェンダ別 政策分析 ＆ 産業インパクト・フィード
+                  {t.feedTitle}
                 </h2>
                 <p className="text-xs text-terminal-muted mt-0.5">
-                  機関投資家の方針発表、法規制動向、および産業現場（ゲーム、映画、製造業等）への波及記録
+                  {t.feedDesc}
                 </p>
               </div>
 
@@ -114,7 +119,7 @@ export function App() {
               </div>
             </div>
 
-            {/* セクター選択ボタン（検索窓を排除し、ボタンのみで完結） */}
+            {/* セクター選択ボタン */}
             <div className="py-3.5 border-b border-terminal-border bg-terminal-bg/50 -mx-5 px-5 my-0">
               <div className="text-[10px] font-data text-terminal-muted uppercase tracking-wider mb-2">
                 FILTER BY SECTOR / AGENDA:
@@ -159,7 +164,9 @@ export function App() {
               ) : (
                 <div className="p-12 text-center text-terminal-muted font-data text-xs bg-terminal-bg border border-terminal-border">
                   <p className="text-terminal-text font-medium mb-1">NO MATCHING DISCLOSURES</p>
-                  <p className="text-terminal-muted">選択したセクターに該当するデータがありません。</p>
+                  <p className="text-terminal-muted">
+                    {isJa ? '選択したセクターに該当するデータがありません。' : 'No disclosures found for the selected sector.'}
+                  </p>
                   <button
                     onClick={() => setActiveCategory('all')}
                     className="mt-4 px-4 py-1.5 bg-terminal-panel hover:bg-terminal-border text-terminal-text border border-terminal-border transition-colors text-[11px]"
@@ -179,14 +186,14 @@ export function App() {
       <footer className="border-t border-terminal-border bg-terminal-bg py-6 text-xs text-terminal-muted font-data">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <span className="text-terminal-text font-semibold">CAPITAL FLOW & POLICY TRACKER (CFPT)</span>
+            <span className="text-terminal-text font-semibold">CAPGAZER // INSTITUTIONAL OBSERVATORY</span>
             <span className="mx-2 text-terminal-borderLight">|</span>
-            <span>INDEPENDENT FINANCIAL INTELLIGENCE DATABASE</span>
+            <span>{t.footerNote}</span>
           </div>
           <div className="flex items-center gap-4 text-[10px]">
-            <span>DATA SOURCES: SEC EDGAR, COMPANY IR, US CONGRESS & PROXY STATEMENTS</span>
+            <span>{t.lastUpdated}</span>
             <button onClick={() => setIsAboutOpen(true)} className="hover:text-terminal-text underline">
-              EDITORIAL POLICY
+              {isJa ? 'データ方針' : 'DATA POLICY'}
             </button>
           </div>
         </div>

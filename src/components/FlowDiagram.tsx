@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { flowNodesData } from '../data/mockData';
 import { X } from 'lucide-react';
 import type { FlowNode } from '../types/tracker';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FlowDiagramProps {
   onClose?: () => void;
@@ -9,6 +10,7 @@ interface FlowDiagramProps {
 }
 
 export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = false }) => {
+  const { isJa } = useLanguage();
   const [selectedNode, setSelectedNode] = useState<FlowNode>(flowNodesData[0]);
 
   return (
@@ -19,7 +21,9 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = fal
             CAPITAL TRANSMISSION MECHANISM
           </div>
           <h3 className="text-base font-serif text-white font-normal mt-0.5">
-            構造プロセス：資本の投資基準が現場に伝わる5段階の経路
+            {isJa 
+              ? '構造プロセス：資本の投資基準が現場に伝わる5段階の経路' 
+              : 'Transmission Flow: How Capital Mandates Propagate to the Real Economy'}
           </h3>
         </div>
         {isModal && onClose && (
@@ -36,6 +40,9 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = fal
       <div className="grid grid-cols-1 sm:grid-cols-5 gap-2 my-4">
         {flowNodesData.map((node, index) => {
           const isSelected = selectedNode.id === node.id;
+          const nodeLabel = isJa ? node.label : (node.labelEn || node.label);
+          const nodeExample = isJa ? node.example : (node.exampleEn || node.example);
+
           return (
             <button
               key={node.id}
@@ -51,11 +58,11 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = fal
                   STAGE 0{index + 1}
                 </span>
                 <span className="text-xs font-sans font-medium leading-tight line-clamp-2">
-                  {node.label.split('. ')[1] || node.label}
+                  {nodeLabel.split('. ')[1] || nodeLabel}
                 </span>
               </div>
               <div className="mt-2 text-[9px] font-data text-terminal-muted truncate">
-                {node.example}
+                {nodeExample}
               </div>
             </button>
           );
@@ -70,11 +77,11 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = fal
               STAGE DETAILS & RATIONALE
             </span>
             <h4 className="text-sm font-serif text-white mt-0.5">
-              {selectedNode.label}
+              {isJa ? selectedNode.label : (selectedNode.labelEn || selectedNode.label)}
             </h4>
           </div>
           <div className="text-[10px] font-data text-terminal-muted bg-terminal-bg px-2.5 py-1 border border-terminal-border">
-            REPRESENTATIVE: <span className="text-terminal-text font-semibold">{selectedNode.example}</span>
+            REPRESENTATIVE: <span className="text-terminal-text font-semibold">{isJa ? selectedNode.example : (selectedNode.exampleEn || selectedNode.example)}</span>
           </div>
         </div>
 
@@ -84,7 +91,7 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = fal
               PRIMARY FUNCTION & ROLE
             </span>
             <p className="text-terminal-text text-xs leading-relaxed">
-              {selectedNode.role}
+              {isJa ? selectedNode.role : (selectedNode.roleEn || selectedNode.role)}
             </p>
           </div>
 
@@ -93,7 +100,7 @@ export const FlowDiagram: React.FC<FlowDiagramProps> = ({ onClose, isModal = fal
               ECONOMIC INCENTIVE & MOTIVATION
             </span>
             <p className="text-terminal-text text-xs leading-relaxed">
-              {selectedNode.motivation}
+              {isJa ? selectedNode.motivation : (selectedNode.motivationEn || selectedNode.motivation)}
             </p>
           </div>
         </div>

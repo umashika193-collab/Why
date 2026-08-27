@@ -1,6 +1,7 @@
 import React from 'react';
 import type { TrackerItem } from '../types/tracker';
 import { ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface PolicyCardProps {
   item: TrackerItem;
@@ -8,18 +9,29 @@ interface PolicyCardProps {
 }
 
 export const PolicyCard: React.FC<PolicyCardProps> = ({ item, onSelect }) => {
+  const { isJa } = useLanguage();
+
   const getCategoryLabel = (category: TrackerItem['category']) => {
     switch (category) {
-      case 'energy': return 'SCOPE 3 / ENERGY';
-      case 'tech': return 'AI & WORKFORCE';
-      case 'governance': return 'GOVERNANCE & CAPITAL';
-      case 'supply_chain': return 'SUPPLY CHAIN';
-      case 'gaming': return 'GAMING / CONTENT';
+      case 'energy': return 'SCOPE 3 & ENERGY';
+      case 'tech': return 'AI & REGULATION';
+      case 'governance': return 'TAKEOVER & CAPITAL';
+      case 'supply_chain': return 'CHIPS & RESHORING';
+      case 'gaming': return 'GAMING & MEDIA';
       case 'entertainment': return 'ENTERTAINMENT';
-      case 'macro_finance': return 'POLICY & REGULATION';
+      case 'macro_finance': return 'DEFENSE & PENSION';
       default: return 'GENERAL';
     }
   };
+
+  const title = isJa ? item.title : (item.titleEn || item.title);
+  const summary = isJa ? item.summary : (item.summaryEn || item.summary);
+  const statusLabel = isJa ? item.statusLabel : (item.statusLabelEn || item.statusLabel);
+  const institution = isJa ? item.institution : (item.institutionEn || item.institution);
+  const primaryDesc = isJa ? item.primaryPolicy.description : (item.primaryPolicy.descriptionEn || item.primaryPolicy.description);
+  const capitalDesc = isJa ? item.capitalIncentive.description : (item.capitalIncentive.descriptionEn || item.capitalIncentive.description);
+  const industryDesc = isJa ? item.industryImpact.description : (item.industryImpact.descriptionEn || item.industryImpact.description);
+  const tags = isJa ? item.tags : (item.tagsEn || item.tags);
 
   return (
     <article 
@@ -38,24 +50,24 @@ export const PolicyCard: React.FC<PolicyCardProps> = ({ item, onSelect }) => {
           </div>
 
           <div className="flex items-center gap-2 text-terminal-muted">
-            <span>STATUS: <strong className="text-terminal-text uppercase">{item.statusLabel}</strong></span>
+            <span>STATUS: <strong className="text-terminal-text uppercase">{statusLabel}</strong></span>
             <span>IMPACT: <strong className="text-terminal-accent font-bold">{item.impactScore}/100</strong></span>
           </div>
         </div>
 
         {/* 発信機関名 */}
         <div className="text-[11px] font-data text-terminal-muted mb-1">
-          SOURCE: <span className="text-terminal-text font-medium">{item.institution}</span> ({item.institutionType})
+          SOURCE: <span className="text-terminal-text font-medium">{institution}</span> ({item.institutionType})
         </div>
 
         {/* 記事タイトル（セリフ体） */}
         <h3 className="text-base font-serif text-white font-normal group-hover:text-terminal-accent transition-colors leading-snug mb-3">
-          {item.title}
+          {title}
         </h3>
 
         {/* 3行要約 */}
         <div className="bg-terminal-panel p-3 border border-terminal-border mb-4 space-y-1 text-xs font-sans text-terminal-text">
-          {item.summary.map((line, idx) => (
+          {summary.map((line, idx) => (
             <div key={idx} className="flex items-start gap-2 leading-relaxed text-[11px]">
               <span className="text-terminal-accent font-data shrink-0">■</span>
               <span>{line}</span>
@@ -67,28 +79,28 @@ export const PolicyCard: React.FC<PolicyCardProps> = ({ item, onSelect }) => {
         <div className="space-y-2 text-xs font-sans">
           <div className="p-2.5 bg-terminal-bg border border-terminal-border">
             <div className="text-[10px] font-data text-terminal-muted uppercase mb-0.5">
-              1. 決定事項・一次情報
+              {isJa ? '1. 決定事項・一次情報' : '1. Policy & Regulatory Action'}
             </div>
             <p className="text-terminal-text text-[11px] leading-relaxed line-clamp-2">
-              {item.primaryPolicy.description}
+              {primaryDesc}
             </p>
           </div>
 
           <div className="p-2.5 bg-terminal-bg border border-terminal-border">
             <div className="text-[10px] font-data text-terminal-accent uppercase mb-0.5">
-              2. 資本のインセンティブ（なぜ）
+              {isJa ? '2. 資本のインセンティブ（なぜ動くのか）' : '2. Capital Incentive (Why It Moves)'}
             </div>
             <p className="text-terminal-text text-[11px] leading-relaxed line-clamp-2">
-              {item.capitalIncentive.description}
+              {capitalDesc}
             </p>
           </div>
 
           <div className="p-2.5 bg-terminal-bg border border-terminal-border">
             <div className="text-[10px] font-data text-terminal-muted uppercase mb-0.5">
-              3. 実体経済・現場への影響
+              {isJa ? '3. 実体経済・現場への影響' : '3. Real-World Economic Impact'}
             </div>
             <p className="text-terminal-text text-[11px] leading-relaxed line-clamp-2">
-              {item.industryImpact.description}
+              {industryDesc}
             </p>
           </div>
         </div>
@@ -97,17 +109,16 @@ export const PolicyCard: React.FC<PolicyCardProps> = ({ item, onSelect }) => {
       {/* フッター情報 */}
       <div className="mt-4 pt-3 border-t border-terminal-border flex items-center justify-between text-xs font-data">
         <div className="flex flex-wrap items-center gap-1.5">
-          {item.tags.slice(0, 3).map((tag, idx) => (
+          {tags.slice(0, 3).map((tag, idx) => (
             <span key={idx} className="text-[10px] text-terminal-muted bg-terminal-panel px-1.5 py-0.5 border border-terminal-border">
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-1 text-[11px] text-terminal-accent font-medium group-hover:underline">
-          <span>READ DISCLOSURE</span>
-          <ArrowUpRight className="w-3 h-3" />
-        </div>
+        <span className="text-terminal-accent group-hover:text-white flex items-center gap-1 text-[11px]">
+          {isJa ? '詳細検証' : 'INSPECT'} <ArrowUpRight className="w-3.5 h-3.5" />
+        </span>
       </div>
     </article>
   );

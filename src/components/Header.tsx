@@ -1,4 +1,6 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../locales/translations';
 
 interface HeaderProps {
   onOpenAbout: () => void;
@@ -9,6 +11,9 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAbout,
   onOpenFlow,
 }) => {
+  const { lang, toggleLang, isJa } = useLanguage();
+  const t = translations[lang];
+
   return (
     <header className="border-b border-terminal-border bg-terminal-bg sticky top-0 z-30">
       {/* メインヘッダー */}
@@ -16,33 +21,45 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="text-[10px] font-data tracking-widest text-terminal-accent uppercase mb-0.5">
-              CAPGAZER // INSTITUTIONAL MONEY FLOW & POLICY OBSERVATORY
+              {t.tagline}
             </div>
             <div className="flex items-baseline gap-3">
               <h1 className="text-2xl sm:text-3xl font-serif text-white font-normal tracking-tight">
-                CapGazer
+                {t.brandTitle}
               </h1>
               <span className="text-sm font-sans text-terminal-muted border-l border-terminal-border pl-3 font-normal">
-                資本ゲイザー — 世の中のお金の流れを眺める
+                {t.brandSub}
               </span>
             </div>
             <p className="text-xs text-terminal-muted mt-1 font-sans">
-              世界の巨大資本（BlackRock等）の保有株式、投資方針、および産業現場への波及を米SEC一次開示から淡々と眺めるデータプラットフォーム
+              {t.headerDesc}
             </p>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-data shrink-0">
+          <div className="flex items-center gap-3 text-xs font-data shrink-0">
+            {/* 言語切り替えトグル */}
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 border border-terminal-accent text-terminal-accent bg-terminal-surface hover:bg-terminal-border/40 px-3 py-1 font-semibold transition-all shadow-sm"
+              title={isJa ? 'Switch to English' : '日本語に切り替え'}
+            >
+              <span>🌐</span>
+              <span className={!isJa ? 'font-bold underline' : 'opacity-60'}>EN</span>
+              <span className="opacity-40">/</span>
+              <span className={isJa ? 'font-bold underline' : 'opacity-60'}>JA</span>
+            </button>
+
             <button 
               onClick={onOpenFlow}
               className="text-terminal-muted hover:text-terminal-text transition-colors border border-terminal-border bg-terminal-surface px-2.5 py-1"
             >
-              [ 構造プロセス図 ]
+              {t.navFlow}
             </button>
             <button 
               onClick={onOpenAbout}
               className="text-terminal-muted hover:text-terminal-text transition-colors border border-terminal-border bg-terminal-surface px-2.5 py-1"
             >
-              [ データ基準 ]
+              {t.navAbout}
             </button>
           </div>
         </div>
