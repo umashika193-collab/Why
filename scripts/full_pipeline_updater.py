@@ -18,8 +18,10 @@ from datetime import datetime, timezone
 
 # Windows/UTF-8対応
 if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
 SEC_HEADERS = {
     'User-Agent': 'CFPTRadar FullPipelineBot/1.0 (contact: research@cfpt-radar.org)',
@@ -90,13 +92,15 @@ def run_full_pipeline():
                     break
         time.sleep(0.12)
 
-    # 2. セクター資金流向（インフロー）の最新ステータス計算
-    print("\n[*] Step 2: Recalculating Real-Time Sector Money Flows...")
-    print("    [✔] AI Power & Data Center Grid: Active Inflow Verified ($185B)")
-    print("    [✔] Defense Tech & Drone Autonomy: NATO Budget Alignment ($92B)")
-    print("    [✔] GLP-1 & Next-Gen Biotech: Pipeline Expansion ($64B)")
-    print("    [✔] Private Credit & Direct Lending: Bank Disintermediation ($58B)")
-    print("    [✔] Critical Minerals & Rare Earths: Reshoring Mandates ($41B)")
+    # 2. セクター資金流向（インフロー）の最新ステータス計算（全セクター動的選定）
+    print("\n[*] Step 2: Recalculating Real-Time Sector Money Flows from Live Market Data...")
+    try:
+        from sector_flow_calculator import calculate_dynamic_sectors, update_mock_data_file
+        top5_sectors_data, total_inflow_b = calculate_dynamic_sectors()
+        update_mock_data_file(top5_sectors_data, total_inflow_b)
+        print(f"    [✔] Dynamic Sector Allocation Complete. Top 5 Inflow Total: ${total_inflow_b}B / QTR")
+    except Exception as e:
+        print(f"    [!] Error during dynamic sector recalculation: {e}", file=sys.stderr)
 
     # 3. フィード自動生成（Gemini API 連携）
     api_key = os.environ.get("GEMINI_API_KEY")

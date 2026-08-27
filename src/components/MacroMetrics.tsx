@@ -9,13 +9,32 @@ export const MacroMetrics: React.FC = () => {
   const t = translations[lang];
   const [selectedSector, setSelectedSector] = useState<CurrentInflowSector>(currentInflowSectorsData[0]);
 
+  // 上位5セクターの合計流入額（$B）を動的に合算
+  const totalFlowNum = currentInflowSectorsData.reduce((acc, sec) => {
+    const match = sec.inflowAmountEn?.match(/\$([0-9.]+)B/);
+    if (match) {
+      return acc + parseFloat(match[1]);
+    }
+    const matchJa = sec.inflowAmount.match(/\$([0-9.]+)/);
+    return acc + (matchJa ? parseFloat(matchJa[1]) : 0);
+  }, 0);
+
+  const aggregatedFlowDisplay = isJa 
+    ? `$${Math.round(totalFlowNum)} 億 / 四半期` 
+    : `$${totalFlowNum.toFixed(1)}B / QTR`;
+
   return (
     <section className="bg-terminal-surface border border-terminal-border mb-8">
       {/* セクションヘッダー */}
       <div className="p-4 sm:p-5 border-b border-terminal-border flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-terminal-panel">
         <div>
-          <div className="text-[10px] font-data text-terminal-accent uppercase tracking-wider mb-0.5">
-            CURRENT CAPITAL FLOW ALLOCATION
+          <div className="flex items-center gap-2 mb-0.5">
+            <span className="text-[10px] font-data text-terminal-accent uppercase tracking-wider">
+              CURRENT CAPITAL FLOW ALLOCATION
+            </span>
+            <span className="text-[9px] px-1.5 py-0.2 bg-terminal-accent/15 border border-terminal-accent/40 text-terminal-accent font-data rounded-none">
+              {isJa ? '動的選定 (3層フィルター準拠)' : 'DYNAMIC ALLOCATION (3-TIER)'}
+            </span>
           </div>
           <h2 className="text-lg sm:text-xl font-serif text-white font-normal">
             {t.inflowsTitle}
@@ -25,7 +44,8 @@ export const MacroMetrics: React.FC = () => {
           </p>
         </div>
         <div className="text-right font-data text-xs text-terminal-muted">
-          <span>AGGREGATED FLOW: <strong className="text-terminal-text">$745B / QTR</strong></span>
+          <span className="block text-[10px] text-terminal-muted/80">{isJa ? '5大セクター合計流入額' : 'AGGREGATED 5-SECTOR FLOW'}</span>
+          <span className="text-sm font-bold text-terminal-text">{aggregatedFlowDisplay}</span>
         </div>
       </div>
 

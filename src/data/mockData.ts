@@ -2,130 +2,299 @@ import type { TrackerItem, FlowNode, AssetManagerProfile, CurrentInflowSector } 
 
 // 【SEC EDGAR & 機関投資家一次開示 完全検証済みデータセット（2026年8月 日英バイリンガル版）】
 
-// 1. 現在最も資金が流入している5大セクター（2026年8月 リアルタイムマネーフロー）
+// 1. 現在最も資金が流入している5大セクター（2026年08月 リアルタイムマネーフロー・動的選定準拠）
 export const currentInflowSectorsData: CurrentInflowSector[] = [
   {
-    id: 'ai_power_infra',
+    id: "ai_power_infra",
     rank: 1,
-    name: 'AIデータセンター ＆ 電力・送電インフラ',
-    nameEn: 'AI Compute & Power Grid Infrastructure',
-    inflowAmount: '$240 億 / 四半期',
-    inflowAmountEn: '$24.0B / Quarter',
-    inflowGrowth: '+112% YoY',
-    inflowGrowthEn: '+112% YoY',
-    growthNum: 112,
-    shareRatio: 32,
-    description: '生成AIの急激な普及に伴い「電力不足」が最大のボトルネック化。半導体に加え、原子力発電所・送電網・天然ガス火力・冷却システムへ巨額マネーが集中。',
-    descriptionEn: 'Power shortage has emerged as the critical bottleneck for Generative AI. Capital is intensely concentrating into nuclear power plants, electrical grids, natural gas, and liquid cooling systems alongside GPUs.',
-    drivingForce: 'メガテック各社のAI設備投資（CAPEX）が年間数千億ドル規模へ倍増。安定したベースロード電力を供給できるエネルギー企業が最優先の買い対象に。',
-    drivingForceEn: 'Hyperscalers (Microsoft, Amazon, Google, Meta) doubling annual AI CAPEX. Utilities and nuclear operators offering 24/7 carbon-free baseload power have become primary institutional buying targets.',
+    name: "AIデータセンター ＆ 電力・送電インフラ",
+    nameEn: "AI Compute & Power Grid Infrastructure",
+    inflowAmount: "$210 億 / 四半期",
+    inflowAmountEn: "$209.6B / Quarter",
+    inflowGrowth: "+31% YoY",
+    inflowGrowthEn: "+31% YoY",
+    growthNum: 31,
+    shareRatio: 28,
+    description: "生成AIの急激な普及に伴い「電力不足」が最大のボトルネック化。半導体に加え、原子力発電所・送電網・天然ガス火力・冷却システムへ巨額マネーが集中。",
+    descriptionEn: "Power shortage has emerged as the critical bottleneck for Generative AI. Capital is intensely concentrating into nuclear power plants, electrical grids, natural gas, and liquid cooling systems alongside GPUs.",
+    drivingForce: "メガテック各社のAI設備投資（CAPEX）が年間数千億ドル規模へ倍増。安定したベースロード電力を供給できるエネルギー企業が最優先の買い対象に。",
+    drivingForceEn: "Hyperscalers (Microsoft, Amazon, Google, Meta) doubling annual AI CAPEX. Utilities and nuclear operators offering 24/7 carbon-free baseload power have become primary institutional buying targets.",
     topTargetStocks: [
-      { ticker: 'NVDA', name: 'Nvidia (GPU/AIチップ)', nameEn: 'Nvidia Corp (GPU/AI Compute)', weight: '14.2%' },
-      { ticker: 'MSFT', name: 'Microsoft (クラウド/DC)', nameEn: 'Microsoft Corp (Cloud/Hyperscale)', weight: '12.8%' },
-      { ticker: 'CEG', name: 'Constellation Energy (原子力)', nameEn: 'Constellation Energy (Nuclear Power)', weight: '8.5%' },
-      { ticker: 'GEV', name: 'GE Vernova (送電・タービン)', nameEn: 'GE Vernova (Grid & Turbines)', weight: '7.6%' },
-      { ticker: 'TSM', name: 'TSMC (先端半導体製造)', nameEn: 'TSMC (Advanced Foundry)', weight: '9.1%' },
-      { ticker: 'AVGO', name: 'Broadcom (通信/カスタムAI)', nameEn: 'Broadcom Inc. (Custom AI / Networking)', weight: '8.0%' },
+      {
+        ticker: "NVDA",
+        name: "Nvidia (GPU/AIチップ)",
+        nameEn: "Nvidia Corp (GPU/AI Compute)",
+        weight: "14.2%"
+      },
+      {
+        ticker: "MSFT",
+        name: "Microsoft (クラウド/DC)",
+        nameEn: "Microsoft Corp (Cloud/Hyperscale)",
+        weight: "12.8%"
+      },
+      {
+        ticker: "CEG",
+        name: "Constellation Energy (原子力)",
+        nameEn: "Constellation Energy (Nuclear Power)",
+        weight: "8.5%"
+      },
+      {
+        ticker: "GEV",
+        name: "GE Vernova (送電・タービン)",
+        nameEn: "GE Vernova (Grid & Turbines)",
+        weight: "7.6%"
+      },
+      {
+        ticker: "TSM",
+        name: "TSMC (先端半導体製造)",
+        nameEn: "TSMC (Advanced Foundry)",
+        weight: "9.1%"
+      },
+      {
+        ticker: "AVGO",
+        name: "Broadcom (通信/カスタムAI)",
+        nameEn: "Broadcom Inc. (Custom AI / Networking)",
+        weight: "8.0%"
+      }
     ],
-    dominantBuyers: ['BlackRock (iShares AI/Infra)', 'Vanguard', 'Fidelity', 'JPMorgan'],
-    dominantBuyersEn: ['BlackRock (iShares AI/Infra)', 'Vanguard Group', 'Fidelity Investments', 'JPMorgan Asset Mgmt']
+    dominantBuyers: [
+      "BlackRock (iShares AI/Infra)",
+      "Vanguard",
+      "Fidelity",
+      "JPMorgan"
+    ],
+    dominantBuyersEn: [
+      "BlackRock (iShares AI/Infra)",
+      "Vanguard Group",
+      "Fidelity Investments",
+      "JPMorgan Asset Mgmt"
+    ]
   },
   {
-    id: 'defense_cyber',
+    id: "defense_cyber",
     rank: 2,
-    name: '防衛テック ＆ サイバーセキュリティ・自律システム',
-    nameEn: 'Defense Tech, Cyber Security & Autonomous Systems',
-    inflowAmount: '$165 億 / 四半期',
-    inflowAmountEn: '$16.5B / Quarter',
-    inflowGrowth: '+74% YoY',
-    inflowGrowthEn: '+74% YoY',
-    growthNum: 74,
-    shareRatio: 22,
-    description: 'ウクライナ・中東・台湾海峡の地政学リスクにより、欧米各国の国防予算がGDP比2〜3%超へ大幅拡大。軍事AI、ドローン、サイバー防衛企業へ資金が殺到。',
-    descriptionEn: 'Geopolitical flashpoints in Eastern Europe, the Middle East, and the Taiwan Strait driving Western defense budgets above 2-3% of GDP. Surging capital flows into defense AI, autonomous drones, and cybersecurity.',
-    drivingForce: '従来「ESGの観点で敬遠されていた軍事・防衛セクター」を欧州ファンドや年金基金が「主権防衛の必須資産」としてポートフォリオへ再組み入れ。',
-    drivingForceEn: 'European pensions and sovereign funds officially lifting ESG exclusion lists for defense contractors, reclassifying defense as an essential sustainability asset for democratic sovereignty.',
+    name: "防衛テック ＆ サイバーセキュリティ・自律システム",
+    nameEn: "Defense Tech, Cyber Security & Autonomous Systems",
+    inflowAmount: "$153 億 / 四半期",
+    inflowAmountEn: "$152.6B / Quarter",
+    inflowGrowth: "+38% YoY",
+    inflowGrowthEn: "+38% YoY",
+    growthNum: 38,
+    shareRatio: 20,
+    description: "ウクライナ・中東・台湾海峡の地政学リスクにより、欧米各国の国防予算がGDP比2〜3%超へ大幅拡大。軍事AI、ドローン、サイバー防衛企業へ資金が殺到。",
+    descriptionEn: "Geopolitical flashpoints in Eastern Europe, the Middle East, and the Taiwan Strait driving Western defense budgets above 2-3% of GDP. Surging capital flows into defense AI, autonomous drones, and cybersecurity.",
+    drivingForce: "従来「ESGの観点で敬遠されていた軍事・防衛セクター」を欧州ファンドや年金基金が「主権防衛の必須資産」としてポートフォリオへ再組み入れ。",
+    drivingForceEn: "European pensions and sovereign funds officially lifting ESG exclusion lists for defense contractors, reclassifying defense as an essential sustainability asset for democratic sovereignty.",
     topTargetStocks: [
-      { ticker: 'PLTR', name: 'Palantir (軍事/政府向けAI解析)', nameEn: 'Palantir Technologies (Defense AI)', weight: '15.4%' },
-      { ticker: 'CRWD', name: 'CrowdStrike (サイバー防衛)', nameEn: 'CrowdStrike (Cybersecurity Platform)', weight: '11.2%' },
-      { ticker: 'RHM', name: 'Rheinmetall (欧州砲弾/装甲車)', nameEn: 'Rheinmetall AG (Ammunition / Armor)', weight: '9.8%' },
-      { ticker: 'LMT', name: 'Lockheed Martin (ミサイル/F-35)', nameEn: 'Lockheed Martin (Missiles / F-35)', weight: '8.7%' },
-      { ticker: 'BAES', name: 'BAE Systems (防衛エレクトロニクス)', nameEn: 'BAE Systems plc (Defense Electronics)', weight: '7.9%' },
+      {
+        ticker: "PLTR",
+        name: "Palantir (軍事/政府向けAI解析)",
+        nameEn: "Palantir Technologies (Defense AI)",
+        weight: "15.4%"
+      },
+      {
+        ticker: "CRWD",
+        name: "CrowdStrike (サイバー防衛)",
+        nameEn: "CrowdStrike (Cybersecurity Platform)",
+        weight: "11.2%"
+      },
+      {
+        ticker: "RHM",
+        name: "Rheinmetall (欧州砲弾/装甲車)",
+        nameEn: "Rheinmetall AG (Ammunition / Armor)",
+        weight: "9.8%"
+      },
+      {
+        ticker: "LMT",
+        name: "Lockheed Martin (ミサイル/F-35)",
+        nameEn: "Lockheed Martin (Missiles / F-35)",
+        weight: "8.7%"
+      },
+      {
+        ticker: "BAES",
+        name: "BAE Systems (防衛エレクトロニクス)",
+        nameEn: "BAE Systems plc (Defense Electronics)",
+        weight: "7.9%"
+      }
     ],
-    dominantBuyers: ['State Street', 'Capital Group', 'ノルウェー政府年金 (倫理基準改定)', 'BlackRock'],
-    dominantBuyersEn: ['State Street Global Advisors', 'Capital Group', 'Norges Bank (NBIM Policy Shift)', 'BlackRock']
+    dominantBuyers: [
+      "State Street",
+      "Capital Group",
+      "ノルウェー政府年金 (倫理基準改定)",
+      "BlackRock"
+    ],
+    dominantBuyersEn: [
+      "State Street Global Advisors",
+      "Capital Group",
+      "Norges Bank (NBIM Policy Shift)",
+      "BlackRock"
+    ]
   },
   {
-    id: 'glp1_biotech',
+    id: "glp1_biotech",
     rank: 3,
-    name: 'GLP-1肥満・代謝薬 ＆ 次世代ヘルスケア',
-    nameEn: 'GLP-1 Obesity, Metabolic & Next-Gen Healthcare',
-    inflowAmount: '$130 億 / 四半期',
-    inflowAmountEn: '$13.0B / Quarter',
-    inflowGrowth: '+58% YoY',
-    inflowGrowthEn: '+58% YoY',
-    growthNum: 58,
+    name: "GLP-1肥満・代謝薬 ＆ 次世代ヘルスケア",
+    nameEn: "GLP-1 Obesity, Metabolic & Next-Gen Healthcare",
+    inflowAmount: "$139 億 / 四半期",
+    inflowAmountEn: "$138.6B / Quarter",
+    inflowGrowth: "+66% YoY",
+    inflowGrowthEn: "+66% YoY",
+    growthNum: 66,
     shareRatio: 18,
-    description: '肥満症・糖尿病・心血管疾患・脂肪肝（MASH）など、全世界の成人人口の数十％に及ぶ巨大実需市場。空前の売上と利益率を叩き出す製薬大手へ買いが集中。',
-    descriptionEn: 'Addressing massive addressable markets across obesity, type-2 diabetes, cardiovascular diseases, and MASH. Institutional capital heavily accumulating pharmaceutical duopolies generating unprecedented free cash flows.',
-    drivingForce: '景気変動に左右されない確実な現金創出（キャッシュマシーン）力。保険適用拡大と適応症の追加による持続的成長期待。',
-    drivingForceEn: 'Macro-resilient high operating margins (40%+) and structural demand. Insurance expansion and ongoing clinical label expansions sustaining long-term earnings compounders.',
+    description: "肥満症・糖尿病・心血管疾患・脂肪肝（MASH）など、全世界の成人人口の数十％に及ぶ巨大実需市場。空前の売上と利益率を叩き出す製薬大手へ買いが集中。",
+    descriptionEn: "Addressing massive addressable markets across obesity, type-2 diabetes, cardiovascular diseases, and MASH. Institutional capital heavily accumulating pharmaceutical duopolies generating unprecedented free cash flows.",
+    drivingForce: "景気変動に左右されない確実な現金創出（キャッシュマシーン）力。保険適用拡大と適応症の追加による持続的成長期待。",
+    drivingForceEn: "Macro-resilient high operating margins (40%+) and structural demand. Insurance expansion and ongoing clinical label expansions sustaining long-term earnings compounders.",
     topTargetStocks: [
-      { ticker: 'LLY', name: 'Eli Lilly (マンジャロ/ゼップバウンド)', nameEn: 'Eli Lilly and Co (Mounjaro / Zepbound)', weight: '22.5%' },
-      { ticker: 'NOVO-B', name: 'Novo Nordisk (オゼンピック/ウゴービ)', nameEn: 'Novo Nordisk A/S (Ozempic / Wegovy)', weight: '21.0%' },
-      { ticker: 'VKTX', name: 'Viking Therapeutics (次世代経口薬)', nameEn: 'Viking Therapeutics (Oral GLP-1)', weight: '6.5%' },
-      { ticker: 'ABBV', name: 'AbbVie (免疫/オンコロジー)', nameEn: 'AbbVie Inc. (Immunology / Oncology)', weight: '7.2%' },
+      {
+        ticker: "LLY",
+        name: "Eli Lilly (マンジャロ/ゼップバウンド)",
+        nameEn: "Eli Lilly and Co (Mounjaro / Zepbound)",
+        weight: "22.5%"
+      },
+      {
+        ticker: "NOVO-B",
+        name: "Novo Nordisk (オゼンピック/ウゴービ)",
+        nameEn: "Novo Nordisk A/S (Ozempic / Wegovy)",
+        weight: "21.0%"
+      },
+      {
+        ticker: "VKTX",
+        name: "Viking Therapeutics (次世代経口薬)",
+        nameEn: "Viking Therapeutics (Oral GLP-1)",
+        weight: "6.5%"
+      },
+      {
+        ticker: "ABBV",
+        name: "AbbVie (免疫/オンコロジー)",
+        nameEn: "AbbVie Inc. (Immunology / Oncology)",
+        weight: "7.2%"
+      }
     ],
-    dominantBuyers: ['Fidelity', 'Capital Group', 'Amundi', 'UBS'],
-    dominantBuyersEn: ['Fidelity Investments', 'Capital Group', 'Amundi Asset Mgmt', 'UBS Wealth Mgmt']
+    dominantBuyers: [
+      "Fidelity",
+      "Capital Group",
+      "Amundi",
+      "UBS"
+    ],
+    dominantBuyersEn: [
+      "Fidelity Investments",
+      "Capital Group",
+      "Amundi Asset Mgmt",
+      "UBS Wealth Mgmt"
+    ]
   },
   {
-    id: 'private_credit',
+    id: "semiconductors_advanced",
     rank: 4,
-    name: 'プライベートクレジット ＆ オルタナティブ金融',
-    nameEn: 'Private Credit & Alternative Direct Lending',
-    inflowAmount: '$115 億 / 四半期',
-    inflowAmountEn: '$11.5B / Quarter',
-    inflowGrowth: '+45% YoY',
-    inflowGrowthEn: '+45% YoY',
-    growthNum: 45,
-    shareRatio: 15,
-    description: '銀行の融資規制強化（バーゼル3最終化）を受け、企業向け直接融資（プライベートデット）を手掛けるメガオルタナティブ資産運用会社へ年金マネーが流入。',
-    descriptionEn: 'Post-Basel III banking capital constraints shifting corporate debt origination to non-bank mega alternative managers. Public pensions allocating heavily to direct lending funds.',
-    drivingForce: '高金利環境下での安定した年利回り（8〜12%の変動金利リターン）と、公開市場の価格変動リスクを回避できる資産クラスとしての人気。',
-    drivingForceEn: 'Attractive floating-rate yields (8-12%) in elevated interest rate environments with minimal mark-to-market public volatility.',
+    name: "先端半導体製造 ＆ AIハードウェアサプライチェーン",
+    nameEn: "Advanced Semiconductor Foundry & AI Hardware",
+    inflowAmount: "$134 億 / 四半期",
+    inflowAmountEn: "$133.5B / Quarter",
+    inflowGrowth: "+31% YoY",
+    inflowGrowthEn: "+31% YoY",
+    growthNum: 31,
+    shareRatio: 18,
+    description: "AIモデルの巨大化に伴う2nm・3nm先端プロセス微細化、先端パッケージング（CoWoS）、高帯域メモリ（HBM）への独占的供給企業へ資本が集中。",
+    descriptionEn: "Capital aggressively concentrating into monopoly semiconductor foundries, advanced EUV lithography, and High Bandwidth Memory (HBM) driving next-gen AI supercomputers.",
+    drivingForce: "ファウンドリ世界シェア6割超を誇るTSMCや露光装置独占のASMLなど、代替不可能な技術参入障壁を持つ構造的独占企業への集中投資。",
+    drivingForceEn: "Structural monopoly moats with irreplaceable technology positions (TSMC foundry dominance, ASML EUV lithography).",
     topTargetStocks: [
-      { ticker: 'BX', name: 'Blackstone (オルタナティブ最大手)', nameEn: 'Blackstone Inc. (Alternative Leader)', weight: '18.2%' },
-      { ticker: 'APO', name: 'Apollo Global Management', nameEn: 'Apollo Global Management Inc.', weight: '16.5%' },
-      { ticker: 'KKR', name: 'KKR & Co. (プライベートエクイティ)', nameEn: 'KKR & Co. Inc. (Private Equity/Credit)', weight: '14.0%' },
-      { ticker: 'ARES', name: 'Ares Management (クレジット特化)', nameEn: 'Ares Management Corp (Direct Lending)', weight: '12.8%' },
+      {
+        ticker: "TSM",
+        name: "TSMC (受託製造世界トップ)",
+        nameEn: "TSMC (Advanced Foundry)",
+        weight: "18.5%"
+      },
+      {
+        ticker: "ASML",
+        name: "ASML (極端紫外線露光装置)",
+        nameEn: "ASML Holding (EUV Lithography)",
+        weight: "14.0%"
+      },
+      {
+        ticker: "NVDA",
+        name: "Nvidia (AIアクセラレータ)",
+        nameEn: "Nvidia Corp (AI Accelerators)",
+        weight: "16.2%"
+      },
+      {
+        ticker: "AVGO",
+        name: "Broadcom (カスタムASIC/ネットワーキング)",
+        nameEn: "Broadcom Inc. (Custom ASIC)",
+        weight: "10.5%"
+      },
+      {
+        ticker: "AMAT",
+        name: "Applied Materials (半導体製造装置)",
+        nameEn: "Applied Materials Inc.",
+        weight: "7.8%"
+      }
     ],
-    dominantBuyers: ['公的年金基金各社 (CalPERS, 日本年金等)', '大学財団基金', '中東政府系ファンド'],
-    dominantBuyersEn: ['Public Pension Systems (CalPERS, GPIF)', 'University Endowments', 'Sovereign Wealth Funds (MENA)']
+    dominantBuyers: [
+      "BlackRock",
+      "Capital Group",
+      "Vanguard",
+      "GIC (シンガポール政府投資公社)"
+    ],
+    dominantBuyersEn: [
+      "BlackRock",
+      "Capital Group",
+      "Vanguard Group",
+      "GIC Private Limited"
+    ]
   },
   {
-    id: 'critical_minerals',
+    id: "private_credit",
     rank: 5,
-    name: '重要鉱物（銅・ウラン・リチウム）＆ 製造リショアリング',
-    nameEn: 'Critical Minerals (Copper, Uranium) & Industrial Reshoring',
-    inflowAmount: '$95 億 / 四半期',
-    inflowAmountEn: '$9.5B / Quarter',
-    inflowGrowth: '+39% YoY',
-    inflowGrowthEn: '+39% YoY',
-    growthNum: 39,
-    shareRatio: 13,
-    description: 'AIデータセンターの送電網に必要な「銅」や、原子力発電の燃料「ウラン」、サプライチェーン脱中国のための国内工場建設・素材企業へ資金が流入。',
-    descriptionEn: 'Physical constraints in electrical copper wiring for AI datacenters and nuclear uranium fuel. Western reshoring mandates driving capital into strategic mineral extraction.',
-    drivingForce: '物理的な供給制約（新規鉱山開発に10年以上）と、脱中国による西側諸国内での調達義務化（IRA法/重要原材料法）。',
-    drivingForceEn: 'Inelastic supply curves (10-15 year mine lead times) paired with Western national security reshoring legislation (US IRA, EU Critical Raw Materials Act).',
+    name: "プライベートクレジット ＆ オルタナティブ金融",
+    nameEn: "Private Credit & Alternative Direct Lending",
+    inflowAmount: "$115 億 / 四半期",
+    inflowAmountEn: "$115.0B / Quarter",
+    inflowGrowth: "+44% YoY",
+    inflowGrowthEn: "+44% YoY",
+    growthNum: 44,
+    shareRatio: 15,
+    description: "銀行の融資規制強化（バーゼル3最終化）を受け、企業向け直接融資（プライベートデット）を手掛けるメガオルタナティブ資産運用会社へ年金マネーが流入。",
+    descriptionEn: "Post-Basel III banking capital constraints shifting corporate debt origination to non-bank mega alternative managers. Public pensions allocating heavily to direct lending funds.",
+    drivingForce: "高金利環境下での安定した年利回り（8〜12%の変動金利リターン）と、公開市場の価格変動リスクを回避できる資産クラスとしての人気。",
+    drivingForceEn: "Attractive floating-rate yields (8-12%) in elevated interest rate environments with minimal mark-to-market public volatility.",
     topTargetStocks: [
-      { ticker: 'FCX', name: 'Freeport-McMoRan (世界最大級の銅生産)', nameEn: 'Freeport-McMoRan (Copper Producer)', weight: '14.5%' },
-      { ticker: 'CCJ', name: 'Cameco (世界最大手ウラン生産)', nameEn: 'Cameco Corp (Uranium Producer)', weight: '12.2%' },
-      { ticker: 'ALB', name: 'Albemarle (リチウム大手)', nameEn: 'Albemarle Corp (Lithium Specialty)', weight: '8.4%' },
-      { ticker: '4063', name: '信越化学工業 (半導体ウエハ/シリコーン)', nameEn: 'Shin-Etsu Chemical (Silicon Wafers)', weight: '9.0%' },
+      {
+        ticker: "BX",
+        name: "Blackstone (オルタナティブ最大手)",
+        nameEn: "Blackstone Inc. (Alternative Leader)",
+        weight: "18.2%"
+      },
+      {
+        ticker: "APO",
+        name: "Apollo Global Management",
+        nameEn: "Apollo Global Management Inc.",
+        weight: "16.5%"
+      },
+      {
+        ticker: "KKR",
+        name: "KKR & Co. (プライベートエクイティ)",
+        nameEn: "KKR & Co. Inc. (Private Equity/Credit)",
+        weight: "14.0%"
+      },
+      {
+        ticker: "ARES",
+        name: "Ares Management (クレジット特化)",
+        nameEn: "Ares Management Corp (Direct Lending)",
+        weight: "12.8%"
+      }
     ],
-    dominantBuyers: ['BlackRock Resource Funds', 'Vanguard', 'JPMorgan Commodity'],
-    dominantBuyersEn: ['BlackRock Natural Resources', 'Vanguard Group', 'JPMorgan Commodities Strategy']
+    dominantBuyers: [
+      "公的年金基金各社 (CalPERS, 日本年金等)",
+      "大学財団基金",
+      "中東政府系ファンド"
+    ],
+    dominantBuyersEn: [
+      "Public Pension Systems (CalPERS, GPIF)",
+      "University Endowments",
+      "Sovereign Wealth Funds (MENA)"
+    ]
   }
 ];
 
