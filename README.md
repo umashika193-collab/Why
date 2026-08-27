@@ -13,8 +13,13 @@
 
 ## 🏛️ 主な機能
 
-### 1. 資金流入上位セクター（リアルタイムマネーフロー）
-* **AIデータセンター＆電力インフラ（$185B）**、**防衛テック＆ドローン（$92B）**、**GLP-1＆次世代バイオ（$64B）**、**プライベートクレジット（$58B）**、**重要鉱物＆レアアース（$41B）** の5大セクターにおける資金流入総額・MoM変動率・主要買い手ファンド・代表銘柄を網羅。
+### 1. 資金流入上位セクター（動的マネーフロー選出エンジン）
+* **万物は流転する（固定値の完全撤廃）**:
+  全10セクターの候補プール（AIインフラ、防衛、バイオ・GLP-1、先端半導体、オルタナティブ金融、重要鉱物、宇宙防衛、クリーンエネルギー等）から、その時々で最も資本が集中している**上位5大セクターを動的に選出・ランク付け**。
+* **3層マネーフロー・フィルター（風見鶏ノイズの排除）**:
+  単なる日々の株価上昇率（相場の後追い・風見鶏）ではなく、**「① SEC 13F / 確定CAPEX（岩盤資本）」×「② 60日平滑化 ETF資金流向（中期トレンド）」×「③ SEC Form 8-K/13G 重要開示」** を統合した総合資本流入額（$B/QTR）で順位を決定。
+* **完全連動データパネル**:
+  選出されたセクターに応じて、代表構成銘柄（ウェイト付）、主要買い手メガファンド、資本流入の背景・構造的要因、合計流入額（AGGREGATED FLOW）が自動で整合。
 
 ### 2. 世界の資産運用会社 AUM上位10社 ＆ 保有マトリクス（2026年最新公開報告準拠）
 * 各社の最新公式開示（2025年末〜2026年上半期 / RankiaPro等）に基づく、世界のトップ10運用機関の運用資産規模（AUM）、主要保有株式比率、および企業への要求方針（議決権行使ガイドライン）：
@@ -39,8 +44,11 @@
 * 全項目に**SEC公式原本リンク（SEC Accession URL）**を完備。
 
 ### 4. 100%完全自律型 自動更新パイプライン
-* **GitHub Actions** により、平日の毎朝 07:00 (JST) にSEC EDGARサーバーを自動巡回。
-* **Google Gemini API (2.0 Flash)** を用いて新着開示資料（Form 8-K/6-K）を「公的開示事実・資本の論理・現場への影響」の3要素に自動構造化してフィードへ追記。
+* **GitHub Actions** により、平日の毎朝 07:00 (JST) に自動巡回・計算を実行。
+* **セクター動的選定エンジン (`scripts/sector_flow_calculator.py`)**:
+  公開市場データ（ETF出来高・3ヶ月モメンタム）を取得し、5大セクターの順位と流入額を再計算。
+* **Google Gemini API (2.0 Flash)**:
+  新着開示資料（Form 8-K/6-K）を「公的開示事実・資本の論理・現場への影響」の3要素に自動構造化してフィードへ追記。
 * マネーフロー、Form 13F保有比率、フィード記事のすべてを完全手作業ゼロで自動更新・自動再デプロイ。
 
 ---
@@ -49,7 +57,7 @@
 
 * **Frontend**: React 19 + TypeScript + Vite + Tailwind CSS + Lucide Icons
 * **Design & Typography**: Financial Times / Bloomberg Terminal 準拠（Newsreader + JetBrains Mono + Plus Jakarta Sans）
-* **Autonomous Pipeline Engine**: Python 3.13 + SEC EDGAR REST API + Google Gemini API (2.0 Flash)
+* **Dynamic Intelligence Engine**: Python 3.13 + Yahoo Finance API + SEC EDGAR REST API + Google Gemini API (2.0 Flash)
 * **CI/CD Automation**: GitHub Actions (`.github/workflows/auto_update.yml`, `.github/workflows/deploy.yml`)
 
 ---
@@ -62,6 +70,12 @@ npm install
 
 # 開発サーバーの起動
 npm run dev
+
+# セクター動的計算・更新エンジンの実行
+py scripts/sector_flow_calculator.py
+
+# フルパイプライン（SEC巡回＋セクター再計算）の実行
+py scripts/full_pipeline_updater.py
 
 # プロダクションビルド
 npm run build
