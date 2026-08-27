@@ -1,18 +1,18 @@
-name: "Auto Update SEC EDGAR Primary Intelligence"
+name: "Auto Update SEC EDGAR Primary Intelligence & Feed"
 
 on:
   # 平日の日本時間 毎朝 07:00 (UTC 22:00) に自動実行
   schedule:
     - cron: '0 22 * * 1-5'
   
-  # GitHubのUIから手動でいつでも実行可能
+  # GitHubのUIから手動でいつでもワンクリック実行可能
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  update-sec-data:
+  update-and-synthesize:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,18 +24,24 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run SEC EDGAR Filing Monitor & Verifier
+      - name: 1. Run SEC EDGAR Monitor
         run: |
           python scripts/auto_updater.py
 
-      - name: Commit and Push if updated
+      - name: 2. Run AI Intelligence Synthesizer (Gemini)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/feed_auto_generator.py
+
+      - name: 3. Commit and Push if updated
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/latest_sec_status.json
+          git add scripts/latest_sec_status.json src/data/mockData.ts
           if git diff --staged --quiet; then
-            echo "No new filings detected today. Skip commit."
+            echo "No changes to commit today."
           else
-            git commit -m "chore(data): auto-update SEC EDGAR verified filings [skip ci]"
+            git commit -m "chore(feed): auto-update SEC intelligence feed with Gemini [skip ci]"
             git push
           fi
