@@ -200,7 +200,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ニューヨーク (CIK: 0001364742)',
     headquartersEn: 'New York, NY (CIK: 0001364742)',
     aum: '約 $14.0兆 〜 15.3兆 (約2,200兆円)',
-    aumEn: '~$14.0T - $15.3T (¥2,200 Trillion)',
+    aumEn: '~$14.0T - $15.3T',
     aumNum: 14500,
     type: 'Index / Passive Giant',
     majorHoldings: [
@@ -253,7 +253,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ペンシルベニア (CIK: 0000102909)',
     headquartersEn: 'Malvern, PA (CIK: 0000102909)',
     aum: '約 $11.6兆 〜 12.5兆 (約1,850兆円)',
-    aumEn: '~$11.6T - $12.5T (¥1,850 Trillion)',
+    aumEn: '~$11.6T - $12.5T',
     aumNum: 12000,
     type: 'Index / Passive Giant',
     majorHoldings: [
@@ -306,7 +306,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ボストン (CIK: 0000035315)',
     headquartersEn: 'Boston, MA (CIK: 0000035315)',
     aum: '約 $7.0兆 〜 7.1兆 (約1,100兆円)',
-    aumEn: '~$7.0T - $7.1T (¥1,100 Trillion)',
+    aumEn: '~$7.0T - $7.1T',
     aumNum: 7050,
     type: 'Active / Multi-Asset',
     majorHoldings: [
@@ -350,7 +350,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'チューリッヒ (CIK: 0001099696)',
     headquartersEn: 'Zurich, Switzerland (CIK: 0001099696)',
     aum: '約 $6.9 兆 (約1,050兆円)',
-    aumEn: '~$6.9T (¥1,050 Trillion)',
+    aumEn: '~$6.9T',
     aumNum: 6900,
     type: 'European ESG Leader',
     majorHoldings: [
@@ -394,7 +394,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ボストン (CIK: 0000093751)',
     headquartersEn: 'Boston, MA (CIK: 0000093751)',
     aum: '約 $5.6兆 〜 6.3兆 (約900兆円)',
-    aumEn: '~$5.6T - $6.3T (¥900 Trillion)',
+    aumEn: '~$5.6T - $6.3T',
     aumNum: 6000,
     type: 'Index / Passive Giant',
     majorHoldings: [
@@ -446,7 +446,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ニューヨーク (CIK: 0000019617)',
     headquartersEn: 'New York, NY (CIK: 0000019617)',
     aum: '約 $4.8兆 〜 5.1兆 (約750兆円)',
-    aumEn: '~$4.8T - $5.1T (¥750 Trillion)',
+    aumEn: '~$4.8T - $5.1T',
     aumNum: 5000,
     type: 'Active / Multi-Asset',
     majorHoldings: [
@@ -490,7 +490,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ニューヨーク (CIK: 0000886982)',
     headquartersEn: 'New York, NY (CIK: 0000886982)',
     aum: '約 $3.4兆 〜 3.6兆 (約530兆円)',
-    aumEn: '~$3.4T - $3.6T (¥530 Trillion)',
+    aumEn: '~$3.4T - $3.6T',
     aumNum: 3500,
     type: 'Active / Multi-Asset',
     majorHoldings: [
@@ -534,7 +534,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ロサンゼルス (世界最大級アクティブファンド)',
     headquartersEn: 'Los Angeles, CA (Active Management Pioneer)',
     aum: '約 $3.2兆 〜 3.4兆 (約500兆円)',
-    aumEn: '~$3.2T - $3.4T (¥500 Trillion)',
+    aumEn: '~$3.2T - $3.4T',
     aumNum: 3300,
     type: 'Active / Multi-Asset',
     majorHoldings: [
@@ -578,7 +578,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'パリ (欧州大陸最大の運用会社)',
     headquartersEn: 'Paris, France (Continental Europe Largest)',
     aum: '約 $2.6兆 〜 2.7兆 (約400兆円)',
-    aumEn: '~$2.6T - $2.7T (¥400 Trillion)',
+    aumEn: '~$2.6T - $2.7T',
     aumNum: 2650,
     type: 'European ESG Leader',
     majorHoldings: [
@@ -622,7 +622,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     headquarters: 'ミュンヘン・カリフォルニア (世界最大級債券運用)',
     headquartersEn: 'Munich, DE & Newport Beach, CA',
     aum: '約 $2.3兆 〜 2.5兆 (約370兆円)',
-    aumEn: '~$2.3T - $2.5T (¥370 Trillion)',
+    aumEn: '~$2.3T - $2.5T',
     aumNum: 2400,
     type: 'Active / Multi-Asset',
     majorHoldings: [
