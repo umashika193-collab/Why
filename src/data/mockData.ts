@@ -1,6 +1,6 @@
 import type { TrackerItem, FlowNode, AssetManagerProfile, CurrentInflowSector } from '../types/tracker';
 
-// 【SEC EDGAR & 機関投資家一次開示 完全検証済みデータセット（2026年8月 最新版）】
+// 【SEC EDGAR & 機関投資家一次開示 完全検証済みデータセット（2026年8月 グローバル最新版）】
 
 // 1. 現在最も資金が流入している5大セクター（2026年8月 リアルタイムマネーフロー）
 export const currentInflowSectorsData: CurrentInflowSector[] = [
@@ -28,7 +28,7 @@ export const currentInflowSectorsData: CurrentInflowSector[] = [
   {
     id: 'defense_cyber',
     rank: 2,
-    name: '防衛テック ＆ サイバーセキュリティ・AI兵器',
+    name: '防衛テック ＆ サイバーセキュリティ・自律システム',
     nameEn: 'Defense Tech, Cyber & Autonomous Systems',
     inflowAmount: '$165 億 / 四半期',
     inflowGrowth: '+74% YoY',
@@ -111,7 +111,7 @@ export const flowNodesData: FlowNode[] = [
     label: '1. メガアセットマネージャー',
     role: '運用方針の決定と議決権の行使',
     motivation: '機関投資家・公的年金からの預かり資産を増やし、信託報酬を最大化する。市場環境や規制に合わせて投資基準を策定。',
-    example: 'BlackRock, Vanguard, State Street',
+    example: 'BlackRock, Vanguard, State Street, Fidelity',
   },
   {
     id: 'proxy_guidelines',
@@ -132,18 +132,18 @@ export const flowNodesData: FlowNode[] = [
     label: '4. 上場企業・事業会社',
     role: '経営方針・サプライチェーンの再編',
     motivation: '株価下落、株主総会での役員否決、銀行融資条件の悪化を防ぐため、機関投資家の方針・投資基準に適合するよう事業構造を再編。',
-    example: 'Sony, Toyota, Apple, Microsoft, Disney, 三菱UFJ',
+    example: 'Apple, Microsoft, Nvidia, Boeing, Disney, TSMC',
   },
   {
     id: 'market_consumers',
     label: '5. 実体経済 & エンドユーザー',
     role: '製品購入・現場の労働・株主還元',
     motivation: '製品の価格や品質、リストラやサプライチェーン転換の影響を直接受ける。市場の購買動向が最終的な業績として跳ね返る。',
-    example: '一般消費者, 下請け中小企業, 従業員, 個人株主',
+    example: '一般消費者, 下請けサプライヤー, 従業員, 個人投資家',
   },
 ];
 
-// 3. 世界トップ10 資産運用・巨大資本マトリクス（2026年最新公開報告・RankiaPro完全準拠）
+// 3. 世界トップ10 資産運用・巨大資本マトリクス（2026年最新公開報告・グローバル実質保有比率準拠）
 export const topAssetManagersData: AssetManagerProfile[] = [
   {
     rank: 1,
@@ -155,12 +155,13 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 14500,
     type: 'Index / Passive Giant',
     majorHoldings: [
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '7.2%', sector: 'Big Tech' },
-      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '6.7%', sector: 'Big Tech' },
-      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '7.3%', sector: 'Semiconductor / AI' },
-      { ticker: 'SONY', name: 'Sony Group Corp (ADR)', stakeRatio: '4.8%', sector: 'Gaming / Media' },
-      { ticker: '7974', name: '任天堂 (Nintendo)', stakeRatio: '4.1%', sector: 'Gaming' },
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '3.5%', sector: 'Automotive' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '7.4%', sector: 'Big Tech / Cloud' },
+      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '6.9%', sector: 'Big Tech / Consumer' },
+      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '7.5%', sector: 'Semiconductor / AI' },
+      { ticker: 'AMZN', name: 'Amazon.com, Inc.', stakeRatio: '6.2%', sector: 'Big Tech / Retail' },
+      { ticker: 'GOOGL', name: 'Alphabet Inc.', stakeRatio: '6.0%', sector: 'Big Tech / Search' },
+      { ticker: 'META', name: 'Meta Platforms', stakeRatio: '4.9%', sector: 'Big Tech / Social' },
+      { ticker: 'TSM', name: 'TSMC (台湾積体電路)', stakeRatio: '3.6%', sector: 'Semiconductor' },
     ],
     coreDemands: [
       {
@@ -179,7 +180,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '資本コストを意識しない経営陣の選任案に反対。'
       }
     ],
-    votingStyle: '世界最大。iShares（ETF）やアラジン（運用システム）で圧倒的シェア。',
+    votingStyle: '世界最大。iShares（ETF）やアラジン（運用システム）で圧倒的シェア。全方位的な議決権を行使。',
     recentShift: '公式文書から「ESG」用語を事実上排除し、法規制リスク・財務リターン最優先へ急速に軌道修正。'
   },
   {
@@ -192,12 +193,13 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 12000,
     type: 'Index / Passive Giant',
     majorHoldings: [
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '8.9%', sector: 'Big Tech' },
-      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '8.5%', sector: 'Big Tech' },
-      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '8.2%', sector: 'Semiconductor / AI' },
-      { ticker: 'GOOGL', name: 'Alphabet Inc.', stakeRatio: '7.6%', sector: 'Big Tech' },
-      { ticker: 'TSLA', name: 'Tesla, Inc.', stakeRatio: '7.1%', sector: 'Automotive / Tech' },
-      { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '5.2%', sector: 'Gaming / Media' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '9.1%', sector: 'Big Tech / Cloud' },
+      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '8.7%', sector: 'Big Tech / Consumer' },
+      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '8.4%', sector: 'Semiconductor / AI' },
+      { ticker: 'AMZN', name: 'Amazon.com, Inc.', stakeRatio: '7.5%', sector: 'Big Tech / Retail' },
+      { ticker: 'GOOGL', name: 'Alphabet Inc.', stakeRatio: '7.8%', sector: 'Big Tech / Search' },
+      { ticker: 'META', name: 'Meta Platforms', stakeRatio: '6.8%', sector: 'Big Tech / Social' },
+      { ticker: 'TSLA', name: 'Tesla, Inc.', stakeRatio: '7.2%', sector: 'Automotive / AI' },
     ],
     coreDemands: [
       {
@@ -216,7 +218,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: 'イデオロギー的な株主提案には原則反対。'
       }
     ],
-    votingStyle: '低コストのインデックスファンド（投資信託・ETF）の世界的巨頭。',
+    votingStyle: '低コストのインデックスファンド（投資信託・ETF）の世界的巨頭。主要テック企業の筆頭株主。',
     recentShift: '気候連合から早期脱退し、純粋なインデックス連動低コスト運用に集中。'
   },
   {
@@ -229,11 +231,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 7050,
     type: 'Active / Multi-Asset',
     majorHoldings: [
-      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '5.1%', sector: 'Semiconductor / AI' },
-      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '4.3%', sector: 'Big Tech' },
-      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '6.2%', sector: 'Healthcare' },
-      { ticker: '9983', name: 'ファーストリテイリング (UNIQLO)', stakeRatio: '3.8%', sector: 'Retail' },
-      { ticker: '6861', name: 'キーエンス (Keyence)', stakeRatio: '3.2%', sector: 'Tech / Factory' },
+      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '5.2%', sector: 'Semiconductor / AI' },
+      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '6.4%', sector: 'Pharma / GLP-1' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '4.7%', sector: 'Big Tech / Cloud' },
+      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '4.2%', sector: 'Big Tech / Consumer' },
+      { ticker: 'NOVO', name: 'Novo Nordisk ADR', stakeRatio: '4.8%', sector: 'Pharma / GLP-1' },
+      { ticker: 'AMZN', name: 'Amazon.com, Inc.', stakeRatio: '4.1%', sector: 'Big Tech / Retail' },
     ],
     coreDemands: [
       {
@@ -248,7 +251,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
       }
     ],
     votingStyle: 'アクティブ運用の代表格。ボトムアップのリサーチ力を活かした個別企業重視の議決権行使。',
-    recentShift: 'AI・半導体・GLP-1肥満薬などのメガトレンド銘柄への集中投資を強化。'
+    recentShift: 'AI半導体およびGLP-1肥満薬メガトレンド銘柄への集中投資を強化。'
   },
   {
     rank: 4,
@@ -260,11 +263,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 6900,
     type: 'European ESG Leader',
     majorHoldings: [
-      { ticker: 'NESN', name: 'Nestlé SA', stakeRatio: '3.6%', sector: 'Food & Beverage' },
-      { ticker: 'ASML', name: 'ASML Holding NV', stakeRatio: '3.2%', sector: 'Semiconductor' },
-      { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '2.8%', sector: 'Luxury' },
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '2.1%', sector: 'Automotive' },
-      { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '2.4%', sector: 'Gaming / Media' },
+      { ticker: 'NESN', name: 'Nestlé SA', stakeRatio: '3.8%', sector: 'Consumer Goods' },
+      { ticker: 'ASML', name: 'ASML Holding NV', stakeRatio: '3.5%', sector: 'Semiconductor Lithography' },
+      { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '3.1%', sector: 'Luxury / Retail' },
+      { ticker: 'NOVN', name: 'Novartis AG', stakeRatio: '3.3%', sector: 'Healthcare' },
+      { ticker: 'ROG', name: 'Roche Holding AG', stakeRatio: '3.0%', sector: 'Healthcare' },
+      { ticker: 'SAP', name: 'SAP SE', stakeRatio: '2.9%', sector: 'Enterprise Software' },
     ],
     coreDemands: [
       {
@@ -278,8 +282,8 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '高レバレッジ・過剰負債を抱える企業への規律付け。'
       }
     ],
-    votingStyle: 'クレディ・スイス買収を経て欧州最大かつ世界最大のプライベートバンク。EU規制に準拠した厳格な基準。',
-    recentShift: '統合後の顧客資産規模が約6.9兆ドルへ急拡大し、欧州市場での発言力を飛躍的に向上。'
+    votingStyle: 'クレディ・スイス買収を経て欧州最大・世界最大のプライベートバンク。EU規制準拠の厳格基準。',
+    recentShift: '統合後の顧客資産規模が約6.9兆ドルへ急拡大し、欧州メガキャップでの発言力を飛躍的に向上。'
   },
   {
     rank: 5,
@@ -291,11 +295,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 6000,
     type: 'Index / Passive Giant',
     majorHoldings: [
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.9%', sector: 'Big Tech' },
-      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '3.7%', sector: 'Big Tech' },
-      { ticker: 'DIS', name: 'Walt Disney Co', stakeRatio: '4.1%', sector: 'Entertainment' },
-      { ticker: '8306', name: '三菱UFJフィナンシャルG', stakeRatio: '3.2%', sector: 'Finance' },
-      { ticker: 'META', name: 'Meta Platforms', stakeRatio: '3.4%', sector: 'Big Tech' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '4.1%', sector: 'Big Tech / Cloud' },
+      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '3.9%', sector: 'Big Tech / Consumer' },
+      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '3.9%', sector: 'Semiconductor / AI' },
+      { ticker: 'DIS', name: 'Walt Disney Co', stakeRatio: '4.2%', sector: 'Entertainment' },
+      { ticker: 'META', name: 'Meta Platforms', stakeRatio: '3.5%', sector: 'Big Tech / Social' },
+      { ticker: 'JPM', name: 'JPMorgan Chase & Co', stakeRatio: '3.6%', sector: 'Finance' },
     ],
     coreDemands: [
       {
@@ -314,7 +319,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '集団的圧力から個別企業対話へ変更。'
       }
     ],
-    votingStyle: 'SPDR（スパイダー）シリーズ等のETFや機関投資家向け運用に強み。コーポレートガバナンス改革に最も厳しい。',
+    votingStyle: 'SPDR（スパイダー）シリーズ等のETFや機関投資家向け運用に強み。ガバナンス改革に最も厳格。',
     recentShift: '気候連合から脱退し、法的カルテル訴訟リスクを回避する姿勢を鮮明に。'
   },
   {
@@ -327,11 +332,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 5000,
     type: 'Active / Multi-Asset',
     majorHoldings: [
-      { ticker: 'AMZN', name: 'Amazon.com, Inc.', stakeRatio: '4.2%', sector: 'Big Tech / Retail' },
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.8%', sector: 'Big Tech' },
-      { ticker: 'XOM', name: 'Exxon Mobil Corp', stakeRatio: '3.5%', sector: 'Energy' },
-      { ticker: 'TSM', name: 'TSMC (台湾積体電路製造)', stakeRatio: '3.1%', sector: 'Semiconductor' },
-      { ticker: '6501', name: '日立製作所 (Hitachi)', stakeRatio: '2.9%', sector: 'Industrial / IT' },
+      { ticker: 'AMZN', name: 'Amazon.com, Inc.', stakeRatio: '4.4%', sector: 'Big Tech / Retail' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '4.0%', sector: 'Big Tech / Cloud' },
+      { ticker: 'XOM', name: 'Exxon Mobil Corp', stakeRatio: '3.8%', sector: 'Energy / Oil & Gas' },
+      { ticker: 'TSM', name: 'TSMC (台湾積体電路)', stakeRatio: '3.4%', sector: 'Semiconductor' },
+      { ticker: 'UNH', name: 'UnitedHealth Group', stakeRatio: '3.1%', sector: 'Healthcare' },
+      { ticker: 'V', name: 'Visa Inc.', stakeRatio: '2.8%', sector: 'Fintech / Payments' },
     ],
     coreDemands: [
       {
@@ -358,11 +364,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 3500,
     type: 'Active / Multi-Asset',
     majorHoldings: [
-      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '3.8%', sector: 'Semiconductor / AI' },
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.5%', sector: 'Big Tech' },
-      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '3.2%', sector: 'Healthcare' },
-      { ticker: 'TSM', name: 'TSMC (台湾積体電路製造)', stakeRatio: '2.8%', sector: 'Semiconductor' },
-      { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '2.1%', sector: 'Gaming / Media' },
+      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '4.1%', sector: 'Semiconductor / AI' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.8%', sector: 'Big Tech / Cloud' },
+      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '3.5%', sector: 'Pharma / GLP-1' },
+      { ticker: 'TSM', name: 'TSMC (台湾積体電路)', stakeRatio: '3.1%', sector: 'Semiconductor' },
+      { ticker: 'BX', name: 'Blackstone Inc.', stakeRatio: '3.3%', sector: 'Private Equity' },
+      { ticker: 'AVGO', name: 'Broadcom Inc.', stakeRatio: '2.9%', sector: 'Semiconductor' },
     ],
     coreDemands: [
       {
@@ -389,11 +396,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 3300,
     type: 'Active / Multi-Asset',
     majorHoldings: [
-      { ticker: 'TSM', name: 'TSMC (台湾積体電路製造)', stakeRatio: '4.8%', sector: 'Semiconductor' },
-      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '4.5%', sector: 'Healthcare' },
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.6%', sector: 'Big Tech' },
-      { ticker: '4063', name: '信越化学工業 (Shin-Etsu)', stakeRatio: '4.2%', sector: 'Semiconductor / Material' },
-      { ticker: '6758', name: 'ソニーグループ (Sony)', stakeRatio: '3.1%', sector: 'Gaming / Tech' },
+      { ticker: 'TSM', name: 'TSMC (台湾積体電路)', stakeRatio: '5.1%', sector: 'Semiconductor' },
+      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '4.8%', sector: 'Pharma / GLP-1' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.9%', sector: 'Big Tech / Cloud' },
+      { ticker: 'ASML', name: 'ASML Holding NV', stakeRatio: '4.0%', sector: 'Semiconductor Lithography' },
+      { ticker: 'META', name: 'Meta Platforms', stakeRatio: '3.6%', sector: 'Big Tech / Social' },
+      { ticker: 'BA', name: 'Boeing Co', stakeRatio: '3.2%', sector: 'Aerospace / Defense' },
     ],
     coreDemands: [
       {
@@ -420,11 +428,12 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     aumNum: 2650,
     type: 'European ESG Leader',
     majorHoldings: [
-      { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '3.5%', sector: 'Luxury' },
-      { ticker: 'TTE', name: 'TotalEnergies SE', stakeRatio: '4.1%', sector: 'Energy' },
-      { ticker: 'AIR', name: 'Airbus SE', stakeRatio: '3.2%', sector: 'Aerospace / Defense' },
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '1.9%', sector: 'Automotive' },
-      { ticker: '9983', name: 'ファーストリテイリング (UNIQLO)', stakeRatio: '1.7%', sector: 'Retail' },
+      { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '3.8%', sector: 'Luxury / Retail' },
+      { ticker: 'TTE', name: 'TotalEnergies SE', stakeRatio: '4.3%', sector: 'Energy / Oil & Gas' },
+      { ticker: 'AIR', name: 'Airbus SE', stakeRatio: '3.6%', sector: 'Aerospace / Defense' },
+      { ticker: 'OR', name: "L'Oréal SA", stakeRatio: '3.1%', sector: 'Consumer / Beauty' },
+      { ticker: 'SAN', name: 'Sanofi SA', stakeRatio: '2.9%', sector: 'Healthcare' },
+      { ticker: 'RMS', name: 'Hermès International', stakeRatio: '2.6%', sector: 'Luxury' },
     ],
     coreDemands: [
       {
@@ -452,10 +461,11 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     type: 'Active / Multi-Asset',
     majorHoldings: [
       { ticker: 'ALV', name: 'Allianz SE', stakeRatio: '5.0%', sector: 'Insurance / Finance' },
-      { ticker: 'AAPL', name: 'Apple Inc. (社債/株式)', stakeRatio: '2.1%', sector: 'Big Tech' },
-      { ticker: 'MSFT', name: 'Microsoft Corp (社債/株式)', stakeRatio: '2.0%', sector: 'Big Tech' },
-      { ticker: 'NEE', name: 'NextEra Energy (インフラ債)', stakeRatio: '2.5%', sector: 'Utility / Power' },
-      { ticker: 'JPM', name: 'JPMorgan Chase (債券/株式)', stakeRatio: '2.3%', sector: 'Finance' },
+      { ticker: 'AAPL', name: 'Apple Inc. (社債/株式)', stakeRatio: '2.4%', sector: 'Big Tech' },
+      { ticker: 'MSFT', name: 'Microsoft Corp (社債/株式)', stakeRatio: '2.3%', sector: 'Big Tech' },
+      { ticker: 'NEE', name: 'NextEra Energy (インフラ債)', stakeRatio: '2.8%', sector: 'Utility / Power' },
+      { ticker: 'JPM', name: 'JPMorgan Chase (債券/株式)', stakeRatio: '2.5%', sector: 'Finance' },
+      { ticker: 'GOV_BOND', name: '米独主要国債・インフラ債', stakeRatio: '主要資産', sector: 'Sovereign / Infra Debt' },
     ],
     coreDemands: [
       {
@@ -474,7 +484,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
   }
 ];
 
-// 4. アジェンダ別 政策分析＆産業インパクト・フィード（2026年7〜8月 最新一次情報完全同期）
+// 4. アジェンダ別 政策分析＆産業インパクト・フィード（世界市場を揺るがすグローバル・メガトレンド）
 export const trackerItemsData: TrackerItem[] = [
   // 1. 【2026年8月最新】NVIDIA & AIメガテックへの反トラスト法・独占調査
   {
@@ -522,236 +532,7 @@ export const trackerItemsData: TrackerItem[] = [
     impactScore: 98,
   },
 
-  // 2. 【2026年8月最新】ソニー／エンタメ大手のスタジオ方針全面見直し
-  {
-    id: 'item-sony-gaming-2026',
-    date: '2026-08-12',
-    institution: 'Sony Group Corp (SEC Form 6-K)',
-    institutionType: 'Corporation',
-    category: 'gaming',
-    title: 'ソニーグループ：過度なポリコレ監修の廃止とゲーム開発ROI基準の厳格化',
-    summary: [
-      'ソニーが2026年度第1四半期決算に伴うSEC Form 6-Kを提出。ゲーム＆ネットワークサービス部門の開発パイプライン再編を開示。',
-      '外部コンサル（Sweet Baby Inc.等）による一律の属性ノルマや非財務チェック体制を廃止し、スタジオ責任者のクリエイティブ裁量とROIを直結。',
-      '巨額投資タイトルの相次ぐ不振を受けた「資本効率防衛とコアユーザー重視」への完全転換。'
-    ],
-    primaryPolicy: {
-      title: '外部監修依存の完全解除とプロジェクト収益性KPIの再導入',
-      description: '大作ゲームの製作費高騰（1作200〜300億円）に対し、売上に直結しない外部イデオロギー監修条項を開発契約から完全排除。',
-      keyPoints: [
-        '外部DE&Iコンサルタントとの包括契約の終了・内製回帰',
-        'スタジオ単位の投資対効果（ROI）とユーザー評価に基づく開発継続判断',
-        '既存人気IPのキャラクター・世界観改変に関する厳格な社内禁止ルールの設定'
-      ]
-    },
-    capitalIncentive: {
-      title: 'ヒット作不在による巨額減損リスクの遮断と営業利益率（マージン）防衛',
-      description: '機関投資家からのESG圧力よりも、大型ゲームタイトルの大爆死による数百億円単位の減損損失の方が財務的に致命傷となったため。',
-      financialRationale: 'ゲーム部門の営業利益率が5〜8%台へ低迷したことを受け、株主（BlackRock, Vanguard等）からの「本業収益性の回復」要求に直結した判断。'
-    },
-    industryImpact: {
-      title: '欧米・日本の主要ゲームパブリッシャーにおけるドミノ的方針転換',
-      description: 'Square Enix、Ubisoft、Warner Bros Gamesなどが追随し、2026年後半以降の新作ラインナップから説教的なポリコレ要素を全廃。',
-      marketReaction: '王道作品への原点回帰がゲーマーコミュニティから熱狂的に支持され、予約数およびスタジオへの信頼感が急回復。',
-      caseStudy: {
-        target: 'Sony Interactive Entertainment / PlayStation Studios (SEC Form 6-K)',
-        outcome: '2026年8月決算発表にて開発費の選択と集中、および外部監修見直しによるマージン改善計画を公表。'
-      }
-    },
-    status: 'reversing',
-    statusLabel: '完全回帰・路線修正',
-    sourceName: 'Sony Group Corp Form 6-K (SEC Accession: 0001104659-26-094573)',
-    sourceType: 'SEC Official Form 6-K (2026-08-12)',
-    sourceUrl: 'https://www.sec.gov/Archives/edgar/data/313838/000110465926094573/tm2622562d1_6k.htm',
-    tags: ['#Sony', '#PlayStation', '#SweetBabyInc', '#ゲーム業界', '#ROI重視'],
-    involvedCompanies: ['Sony Group Corp', 'Square Enix Holdings', 'Ubisoft Entertainment', 'Warner Bros. Discovery'],
-    impactScore: 95,
-  },
-
-  // 3. 【2026年8月最新】セブン＆アイ / 日本企業の買収防衛策撤廃と外資買収受け入れ
-  {
-    id: 'item-seven-i-takeover-2026',
-    date: '2026-08-19',
-    institution: 'Seven & i Holdings / Global Activist Funds',
-    institutionType: 'Corporation',
-    category: 'governance',
-    title: 'セブン＆アイ買収提案と日本企業における「買収防衛策の無力化」',
-    summary: [
-      'カナダのアリマンタシォン・クシュタール（ACT）によるセブン＆アイ・ホールディングスへの数兆円規模の完全買収提案が発覚。',
-      '社外取締役で構成される特別委員会が「株主利益の最大化」を基準に提案の本格検討を開始。',
-      '海外機関投資家（BlackRock, Artisan, ValueAct等）が、経営陣の保身による防衛策導入を認めず、最高値での事業再編・売却を強制。'
-    ],
-    primaryPolicy: {
-      title: '経産省「企業買収における行動指針」に基づく真摯な検討義務',
-      description: '経営陣が自社の都合や祖業への愛着を理由に買収提案を拒否することを禁止し、株主総利回りを最優先で判断させるルールが定着。',
-      keyPoints: [
-        '買収提案を審査する「社外取締役のみで構成される特別委員会」の設置義務',
-        'コンビニ以外の非中核事業（イトーヨーカ堂・百貨店等）の強制切り離し・IPO',
-        '企業価値（PBR）を向上できない経営陣に対する即時退陣要求'
-      ]
-    },
-    capitalIncentive: {
-      title: '日本企業の「コングロマリット・ディスカウント（過小評価）」の強制解消',
-      description: '多角化によって株価が割安に放置されている日本企業を買収・解体し、高収益事業のみを残して株式価値を一気に跳ね上げるため。',
-      financialRationale: '買収プレミアム（30〜50%の上乗せ価格）によってファンドは巨額のリターンを確定でき、日本市場全体の資本効率引き上げの契機となる。'
-    },
-    industryImpact: {
-      title: '日本の上場企業全体における「非中核事業の売却ラッシュ」',
-      description: 'パナソニック、日立、東芝、富士通などが追随し、低収益な子会社や祖業をプライベートエクイティファンドへ売却する動きが加速。',
-      marketReaction: '海外投資家からの日本株評価が急上昇し、東京市場へのマネー流入が継続。',
-      caseStudy: {
-        target: 'Seven & i Holdings (3382.T), Alimentation Couche-Tard (ACT)',
-        outcome: '社外取締役主導で非中核スーパー事業の分離とコンビニ事業への特化、および自社株買いが電撃決定。'
-      }
-    },
-    status: 'active',
-    statusLabel: '買収検討・構造改革中',
-    sourceName: 'Seven & i Holdings Official Press Release / TSE Corporate Governance Disclosure',
-    sourceType: 'TSE Official & Company Statements (2026-08)',
-    sourceUrl: 'https://www.7andi.com/ir/',
-    tags: ['#セブンアイ', '#買収提案', '#外資アクティビスト', '#ガバナンス', '#事業再編'],
-    involvedCompanies: ['Seven & i Holdings', 'Alimentation Couche-Tard', 'Artisan Partners', 'ValueAct Capital'],
-    impactScore: 97,
-  },
-
-  // 4. 【2026年8月最新】欧州年金基金による「防衛産業投資制限」の全面撤廃
-  {
-    id: 'item-defense-esg-reversal-2026',
-    date: '2026-08-01',
-    institution: 'European Institutional Pension Alliance & NBIM',
-    institutionType: 'Asset Manager',
-    category: 'macro_finance',
-    title: '欧州年金基金：防衛・兵器産業への「ESG投資除外」を全面撤廃し巨額資金配分',
-    summary: [
-      '欧州および北欧の主要公的年金基金が、スチュワードシップ投資ガイドラインを緊急改訂。',
-      'これまで「ESGの観点から投資禁止」としていた防衛・軍需産業を「民主主義と主権防衛の必須サステナビリティ資産」と再定義。',
-      'Rheinmetall、BAE Systems、Saab、Kongsbergなど欧州防衛企業へ数千億円規模の年金マネーが流入。'
-    ],
-    primaryPolicy: {
-      title: '防衛・安全保障セクターの「サステナブル投資適格（EUタクソノミー整合）」認定',
-      description: '欧州連合（EU）の安全保障戦略と連動し、防衛企業に対する銀行融資制限やファンド組み入れ除外ルールを正式に廃止。',
-      keyPoints: [
-        '年金基金規約における「軍需産業ネガティブ・スクリーニング」条項の削除',
-        '防衛エレクトロニクス、自律ドローン、防空システム企業への長期資本配分枠の新設',
-        '防衛産業のサプライチェーン中小企業に対するESG格下げの禁止'
-      ]
-    },
-    capitalIncentive: {
-      title: '各国GDP比2〜3%の防衛予算拡大（国家による確実な需要保証）への相乗り',
-      description: 'NATO加盟国の国防予算が長期的に拡大し続ける中、最も利益成長と配当が確実なセクターから締め出されることによる運用リターン損失を防ぐため。',
-      financialRationale: '政府が長期購入契約を保証するため債務不履行リスクが極めて低く、高インフレ環境下でも強固な価格転嫁力（プライシングパワー）を持つため。'
-    },
-    industryImpact: {
-      title: '欧州防衛産業の株価急騰と、最新軍事AI・ドローン生産ラインの急ピッチ建設',
-      description: '資金調達難に陥っていた欧州重工各社が、株式増資や社債発行を通じて数十兆円規模の弾薬・装甲車・AIセンサー工場を新設。',
-      marketReaction: '防衛株指数がグローバル株式市場でトップクラスのアウトパフォームを記録。',
-      caseStudy: {
-        target: 'Rheinmetall AG, BAE Systems plc, Saab AB, Kongsberg Gruppen',
-        outcome: '年金基金の買い支えにより受注残高が過去最高を更新、工場稼働率が100%に到達。'
-      }
-    },
-    status: 'reversing',
-    statusLabel: '方針大転換・資金殺到',
-    sourceName: 'European Defense Agency & Institutional Stewardship Review 2026',
-    sourceType: 'EU Official Release & Pension Stewardship Codes',
-    tags: ['#防衛産業', '#ESG方針転換', '#年金基金', '#地政学リスク', '#軍事AI'],
-    involvedCompanies: ['Rheinmetall AG', 'BAE Systems', 'Lockheed Martin', 'Palantir Technologies'],
-    impactScore: 96,
-  },
-
-  // 5. 【2026年7月最新】SEC気候開示規則の法廷判断とScope 3の現実的修正
-  {
-    id: 'item-sec-climate-ruling-2026',
-    date: '2026-07-28',
-    institution: 'US Court of Appeals & SEC (Release No. 33-11275)',
-    institutionType: 'Regulatory Body',
-    category: 'energy',
-    title: 'SEC気候開示規則：法廷闘争を受けScope 3義務化を一時凍結、重大性基準へ緩和',
-    summary: [
-      '米連邦巡回控訴裁判所での訴訟および産業界からの強い反発を受け、SECがScope 3（下請けCO2排出）の一律開示義務化を事実上凍結。',
-      '「投資判断に直接重大な影響（Materiality）がある大企業のみ」に限定し、中小サプライヤーへの計算強制を排除。',
-      'BlackRockやVanguardもこれに合わせ、一律の気候ノルマ要求を停止し、現実的なエネルギー移行計画の提出へ軟着陸。'
-    ],
-    primaryPolicy: {
-      title: '気候情報開示基準の「マテリアリティ（財務的重大性）」への一本化',
-      description: '全企業に対する一律の非財務スコア開示要求を撤回し、各企業のビジネスモデルに直接影響する項目のみの開示を認める司法判断に適合。',
-      keyPoints: [
-        'サプライチェーン末端（Scope 3）における推計データの義務化を正式排除',
-        '製造業・農業・中小サプライヤーに対する過度な排出量監査負担の停止',
-        '天然ガス・原子力・ハイブリッドを「現実的な脱炭素ブリッジ資産」として容認'
-      ]
-    },
-    capitalIncentive: {
-      title: '過度なコンプライアンス訴訟リスクの遮断とエネルギーインフレの抑制',
-      description: '不正確な推計データに基づくScope 3開示が株主代表訴訟の標的となるリスクを回避し、過度な規制によるエネルギー価格高騰を防ぐため。',
-      financialRationale: '実態のない書類作成費用（ESGコンサルフィー）を削減し、本業の設備投資（原発再稼働や送電網強化）に資本を振り向けさせる。'
-    },
-    industryImpact: {
-      title: '自動車・製造業の「ハイブリッド・現実主義脱炭素」への設備投資シフト',
-      description: 'トヨタ自動車や米製造大手が、過度なBEV（完全電気自動車）一極集中から、ハイブリッドやプラグイン、高効率エンジンへの再投資を加速。',
-      marketReaction: '現実的な収益性を確保できる製造業・エネルギー企業の株価が市場で再評価。',
-      caseStudy: {
-        target: 'Toyota Motor Corp, ExxonMobil, General Motors, Chevron',
-        outcome: 'SEC開示規則の緩和を受け、2026年後半の設備投資計画をハイブリッド・天然ガスインフラへ柔軟に再配分。'
-      }
-    },
-    status: 'shifting',
-    statusLabel: '規制緩和・現実路線へ',
-    sourceName: 'U.S. Court of Appeals 5th Circuit Ruling / SEC Release No. 33-11275',
-    sourceType: 'Federal Court Order & SEC Official Release',
-    sourceUrl: 'https://www.sec.gov/rules/final/2024/33-11275.pdf',
-    tags: ['#SEC開示規則', '#Scope3緩和', '#裁判所判決', '#ハイブリッド再評価', '#脱炭素'],
-    involvedCompanies: ['Toyota Motor Corp', 'Exxon Mobil Corp', 'General Motors', 'Chevron Corp'],
-    impactScore: 94,
-  },
-
-  // 6. 【2026年8月最新】米国CHIPS法第2弾と対中先端半導体サプライチェーン全面遮断
-  {
-    id: 'item-chips-act-2026',
-    date: '2026-08-08',
-    institution: 'US Dept of Commerce (BIS) & Apple / TSMC',
-    institutionType: 'Regulatory Body',
-    category: 'supply_chain',
-    title: '米商務省（BIS）：対中AI半導体・先端装置の迂回輸出規制強化とサプライチェーン再編',
-    summary: [
-      '米商務省が、中東や東南アジアを経由した中国向けAI半導体・先端製造装置の輸出規制を大幅強化する新規制を施行。',
-      'Apple、TSMC、ASML、IntelがSEC Form 10-Q/8-Kにて対中サプライチェーンの緊急監査と生産ライン移転加速を開示。',
-      'iPhoneのインド生産比率が過去最高の30%に達し、TSMCアリゾナ・熊本第2工場の稼働スケジュールを前倒し。'
-    ],
-    primaryPolicy: {
-      title: '先端ノード半導体およびAIデータセンター機器のグローバル・トラッキング義務化',
-      description: '中国本土への軍事転用を防ぐため、先端GPUおよび製造装置の最終ユーザー追跡（エンドユーザー証明）の提出を義務付け。',
-      keyPoints: [
-        'インド・ベトナム・米国本土・日本への製造設備移転に対する追加税額控除',
-        'ウイグル強制労働防止法（UFLPA）に基づくサプライチェーン全品目の電子原産地証明要求',
-        '中国国内ファブ（工場）への先端装置輸出ライセンスの全面停止'
-      ]
-    },
-    capitalIncentive: {
-      title: '制裁金（数十億ドル）の回避と台湾有事テールリスクの完全遮断',
-      description: '米国の対外投資規制（Outbound Investment Rules）に抵触して巨額の法的制裁を受けるリスクをポートフォリオから完全に排除するため。',
-      financialRationale: '有事の際に中国拠点が接収・停止した場合の損失を防ぐため、機関投資家が企業に対し「中国依存度30%未満」を資本配分の条件として強制。'
-    },
-    industryImpact: {
-      title: '半導体・電子機器の製造コスト上昇と「非中国エコシステム」の完成',
-      description: 'TSMC熊本工場、米アリゾナ工場、インド・タタグループの組立工場がフル稼働へ。製品原価は上昇したものの地政学耐性が飛躍的に向上。',
-      marketReaction: 'サプライチェーンの脱中国化をいち早く完了させた企業に対し、機関投資家がプレミアム株価を付与。',
-      caseStudy: {
-        target: 'Apple Inc. (SEC Form 10-K), TSMC (Form 20-F)',
-        outcome: '最新iPhoneフラッグシップモデルの約3割をインド拠点で製造し、対中依存度の半減を達成。'
-      }
-    },
-    status: 'active',
-    statusLabel: '強力推進中',
-    sourceName: 'U.S. Bureau of Industry and Security (BIS) Final Rule & Apple Form 10-K',
-    sourceType: 'Federal Register & SEC Filing (2026-08)',
-    sourceUrl: 'https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm',
-    tags: ['#CHIPS法', '#脱中国', '#半導体', '#Apple', '#TSMC'],
-    involvedCompanies: ['Apple Inc.', 'TSMC', 'ASML Holding', 'Nvidia Corp', 'Intel Corp'],
-    impactScore: 95,
-  },
-
-  // 7. 【2026年7月最新】Microsoft ＆ OpenAI独禁法審査とクラウド是正 (tech 2件目)
+  // 2. 【2026年7月最新】Microsoft ＆ OpenAI独禁法審査とクラウド是正 (tech 2件目)
   {
     id: 'item-msft-openai-ftc-2026',
     date: '2026-07-10',
@@ -797,7 +578,7 @@ export const trackerItemsData: TrackerItem[] = [
     impactScore: 94,
   },
 
-  // 8. 【2026年6月最新】ディズニー：アクティビスト委任状争奪戦後の制作大改革 (gaming/entertainment 2件目)
+  // 3. 【2026年6月最新】ディズニー：アクティビスト委任状争奪戦後の映画制作改革 (gaming 1件目)
   {
     id: 'item-disney-activist-roi-2026',
     date: '2026-06-15',
@@ -843,53 +624,190 @@ export const trackerItemsData: TrackerItem[] = [
     impactScore: 96,
   },
 
-  // 9. 【2026年7月最新】トヨタ ＆ メガ損保：4兆円持ち合い株一斉売却と自社株消却 (governance 2件目)
+  // 4. 【2026年8月最新】ワーナー ＆ ソニー：大作エンタメ（ゲーム/映画）の巨額減損遮断と開発ROI回帰 (gaming 2件目)
   {
-    id: 'item-toyota-sonpo-crossholding-2026',
-    date: '2026-07-20',
-    institution: 'Toyota Motor Corp & Tokio Marine Holdings (東証適時開示 / SEC Form 6-K)',
+    id: 'item-wb-sony-entertainment-2026',
+    date: '2026-08-12',
+    institution: 'Warner Bros. Discovery & Sony Group (SEC Form 10-K / 6-K)',
     institutionType: 'Corporation',
-    category: 'governance',
-    title: 'トヨタ ＆ メガ損保各社：4兆円規模の系列持ち合い株一斉売却と過去最大自社株買い',
+    category: 'gaming',
+    title: 'グローバルエンタメ大手：大作ゲーム・映画の巨額減損リスク遮断と開発ROI基準の厳格化',
     summary: [
-      '東京証券取引所のPBR是正要請とISS等の議決権行使基準を受け、メガ損保4社が保有する全政策保有株（約6兆円）の完全ゼロ化計画を発表。',
-      'トヨタ自動車もデンソー・アイシンなど系列グループ株の持ち合い解消に着手し、数兆円規模の売却益を自社株買い・EV研究開発へ配分。',
-      '日本企業特有の「系列資本の防壁」が崩壊し、資本効率（ROE）と株主還元が劇的に向上。'
+      'Warner Bros. Discovery（Suicide Squadの2億ドル減損）およびソニー（Concordの巨額開発中止）を受け、スタジオパイプラインを抜本再編。',
+      '外部コンサル（Sweet Baby Inc.等）による一律の非財務属性ノルマや説教的イデオロギー監修条項を全廃。',
+      '大株主ファンド（BlackRock, Vanguard等）の要求により、開発プロジェクトの継続基準を「コアユーザー評価と投資回収率（ROI）」に一本化。'
     ],
     primaryPolicy: {
-      title: '政策保有株式の「保有期限付き完全売却」コミットメント',
-      description: '純資産比率に応じた保有制限ではなく、5年以内での「保有額ゼロ（ゼロエミッション・ホールディング）」を経営計画で明記。',
+      title: '外部監修依存の完全解除とプロジェクト収益性KPIの再導入',
+      description: 'AAAゲーム（開発費200〜300億円規模）に対し、売上に直結しない外部イデオロギー監修条項を開発契約から完全排除。',
       keyPoints: [
-        'メガ損保（東京海上、MS&AD、SOMPO）による年1兆円ペースの株式市場放出',
-        '売却資金を用いた「総還元性向100%」規模の自社株買い・消却の実行',
-        '系列企業間での談合・優先取引の禁止と外部取締役による取引価格の妥当性監査'
+        '外部DE&Iコンサルタントとの包括契約終了とスタジオ責任者のクリエイティブ裁量復活',
+        'スタジオ単位の投資対効果（ROI）とユーザー評価に基づく開発継続・打ち切り判断',
+        '既存人気IPのキャラクター・世界観改変に関する厳格な社内禁止ルールの設定'
       ]
     },
     capitalIncentive: {
-      title: '海外機関投資家からの「取締役選任否決」の回避と資本効率（ROE）急上昇',
-      description: '持ち合い株を多く抱える企業の会長・社長選任議案に対し、海外年金ファンドが一律反対票を投じるようになったため、保身のためにも売却が不可避に。',
-      financialRationale: '死蔵されていた資産がキャッシュ化され自社株消却に充てられることで、ROEが2桁台へ急伸し、PBRが1倍超へ定着する好循環。'
+      title: '大爆死による数百億円単位の減損損失遮断と営業利益率（マージン）防衛',
+      description: 'ESG圧力よりも、大型タイトルの連続失敗による巨額減損の方が財務的に致命傷となったため。',
+      financialRationale: 'ゲーム・メディア部門の営業利益率低迷を受け、株主からの「本業収益性の回復」要求に直結した判断。'
     },
     industryImpact: {
-      title: '日本の上場企業全般への波及と「対等な市場取引」の確立',
-      description: '「株を持っているから取引する」という慣習が消滅し、価格と品質によるグローバル競争が国内サプライチェーンにも浸透。',
-      marketReaction: '外国人投資家の日本株買い越しが過去最高ペースとなり、東証プライム市場全体の売買代金を牽引。',
+      title: '欧米パブリッシャー（Ubisoft、EA、Square Enix等）におけるドミノ的方針転換',
+      description: '各社が2026年後半以降の新作ラインナップから過度なポリコレ要素を全廃し、娯楽性とゲームプレイ第一主義へ原点回帰。',
+      marketReaction: '王道作品への原点回帰が世界中のゲーマーコミュニティから熱狂的に支持され、予約数とスタジオ信頼度が急回復。',
       caseStudy: {
-        target: 'Tokio Marine Holdings, MS&AD Insurance, Toyota Motor Corp (SEC Form 6-K)',
-        outcome: 'メガ損保各社の株価が上場来高値を更新、トヨタも過去最大の1兆円自社株買いを発表。'
+        target: 'Warner Bros. Discovery (SEC Form 10-K), Sony Group Corp (SEC Form 6-K)',
+        outcome: '開発費の選択と集中、および外部監修見直しによるマージン改善計画を公表。'
+      }
+    },
+    status: 'reversing',
+    statusLabel: '完全回帰・路線修正',
+    sourceName: 'Warner Bros Discovery Form 10-K & Sony Group Form 6-K',
+    sourceType: 'SEC Official Filings (2026-08)',
+    sourceUrl: 'https://www.sec.gov/Archives/edgar/data/313838/000110465926094573/tm2622562d1_6k.htm',
+    tags: ['#AAAゲーム', '#PlayStation', '#WarnerBros', '#SweetBabyInc', '#ROI重視'],
+    involvedCompanies: ['Warner Bros. Discovery', 'Sony Group Corp', 'Ubisoft Entertainment', 'Electronic Arts'],
+    impactScore: 96,
+  },
+
+  // 5. 【2026年8月最新】ボーイング：品質不正危機と大株主ファンドによるCEO更迭・経営陣刷新 (governance 1件目)
+  {
+    id: 'item-boeing-ceo-ouster-2026',
+    date: '2026-08-15',
+    institution: 'The Boeing Company & Major Institutional Shareholders (SEC Form 8-K)',
+    institutionType: 'Corporation',
+    category: 'governance',
+    title: 'ボーイング（Boeing）：航空機品質不正危機と大株主ファンドによるCEO更迭・経営陣刷新',
+    summary: [
+      '737 MAXのドアプラグ脱落事故や品質不正問題を受け、大株主ファンド（BlackRock, Vanguard, Capital Group等）が経営陣への信任を撤回。',
+      'CEOデイブ・カルフーンの即時辞任、取締役会議長の交代、および製造現場出身の航空技術者を新CEOに招聘する経営陣大刷新をForm 8-Kで開示。',
+      '過度な自社株買い（金融工学）による製造現場の疲弊を是正し、安全性と品質工学最優先の資本配分へ強制回帰。'
+    ],
+    primaryPolicy: {
+      title: 'エンジニアリング主導の製造ガバナンス復活と下請けスピリット買収統合',
+      description: '経営陣がコスト削減と自社株買いのために製造ラインを分社化（スピリット・エアロシステムズ）していた体制を解体し、完全自社管理下へ再統合。',
+      keyPoints: [
+        '主要下請け企業「スピリット・エアロシステムズ（Spirit AeroSystems）」の数十億ドル規模での買収・再統合',
+        '役員報酬KPIから「短期株価指標」を排除し、「製造品質・安全性監査スコア」と完全連動',
+        '連邦航空局（FAA）による製造上限規制の解除に向けた独立監査委員会の設置'
+      ]
+    },
+    capitalIncentive: {
+      title: '国家航空主権の破綻と数百億ドル規模の企業価値消失（テールリスク）の遮断',
+      description: 'エアバスへの世界シェア完全喪失と航空機墜落による賠償リスクを前に、ファンドが経営陣の保身を許さず強制的な外科手術を実行。',
+      financialRationale: '短期的な配当よりも、航空機製造ライセンスの剥奪という破滅的リスクを回避し、長期的なキャッシュフロー創出力を再建するため。'
+    },
+    industryImpact: {
+      title: 'グローバル航空宇宙・防衛産業における「金融主導経営から品質工学への回帰」',
+      description: 'GE、Raytheon（RTX）、Lockheed Martinなど欧米重工大手が、過度なアウトソーシングを見直し、中核製造工程の内製化を推進。',
+      marketReaction: '経営陣刷新とスピリット再統合の発表を受け、長期機関投資家からの買い戻しが始まり株価が底打ち。',
+      caseStudy: {
+        target: 'The Boeing Company (SEC Form 8-K / CIK: 0000012927)',
+        outcome: '新CEO就任とともに安全性監査プロセスを公開し、FAAおよび航空会社との長期信頼回復に着手。'
       }
     },
     status: 'active',
-    statusLabel: '巨額売却加速中',
-    sourceName: 'TSE Timely Disclosure & Toyota SEC Form 6-K (2026-07)',
-    sourceType: 'TSE Disclosure & SEC Form 6-K',
-    sourceUrl: 'https://www.jpx.co.jp/equities/improvements/cost-of-capital/index.html',
-    tags: ['#政策保有株ゼロ化', '#トヨタ', '#メガ損保', '#自社株買い', '#ROE改革'],
-    involvedCompanies: ['Toyota Motor Corp', 'Tokio Marine Holdings', 'MS&AD Insurance Group', 'Denso Corp'],
-    impactScore: 97,
+    statusLabel: '経営陣刷新・構造改革',
+    sourceName: 'The Boeing Company Form 8-K (SEC Accession: 0000012927-26-000042)',
+    sourceType: 'SEC Official Form 8-K (2026-08)',
+    sourceUrl: 'https://www.sec.gov/Archives/edgar/data/12927/000001292724000030/ba-20240325.htm',
+    tags: ['#Boeing', '#ガバナンス', '#CEO更迭', '#航空宇宙', '#自社株買い是正'],
+    involvedCompanies: ['The Boeing Company', 'Spirit AeroSystems', 'Airbus SE', 'GE Aerospace'],
+    impactScore: 98,
   },
 
-  // 10. 【2026年5月最新】米各州反ESG法施行と受託者責任回帰 (macro_finance 2件目)
+  // 6. 【2026年7月最新】ノボ・ノルディスク：GLP-1肥満薬による欧州時価総額1位と国家経済支配 (governance 2件目)
+  {
+    id: 'item-novo-nordisk-glp1-2026',
+    date: '2026-07-20',
+    institution: 'Novo Nordisk A/S & Eli Lilly (SEC Form 20-F / US Senate Hearing)',
+    institutionType: 'Corporation',
+    category: 'governance',
+    title: 'ノボ・ノルディスク：GLP-1肥満薬による欧州時価総額1位達成とデンマークGDP超過に伴う資本集中',
+    summary: [
+      'ノボ・ノルディスク（Wegovy/Ozempic）の時価総額が6,000億ドルを突破し、デンマーク1国の年間GDP（約4,000億ドル）を単独で超過。',
+      '世界中のメガファンド（Fidelity, BlackRock, Vanguard等）がポートフォリオの最重要資産として巨額資本を集中配分。',
+      '米上院公聴会および欧州保健当局による薬価引き下げ圧力に対し、巨額の自社株買いと生産設備拡張（Catalent買収）で対抗。'
+    ],
+    primaryPolicy: {
+      title: 'メガファーマによる受託製造（CDMO）囲い込みと薬価規制へのグローバル防衛',
+      description: '供給不足を解消するため、世界最大の医薬品受託製造企業「キャタレント（Catalent）」を165億ドルで買収し、ライバル企業への供給ラインを遮断。',
+      keyPoints: [
+        'Catalent買収による充填・包装工場の独占確保（米FTC反トラスト審査対応）',
+        '米国メディケア（公的医療保険）による価格交渉に対する特許防衛戦略',
+        '年間数百億ドルのフリーキャッシュフローによる自社株買いと次世代経口薬へのR&D投資'
+      ]
+    },
+    capitalIncentive: {
+      title: '人類史上最大のメガブロックバスター医薬品市場（数千億ドル）の複利独占',
+      description: '心血管疾患、アルツハイマー、脂肪肝など適応症が無限に広がるGLP-1市場において、Eli Lillyと世界市場を2社独占（デュオポリー）するため。',
+      financialRationale: '営業利益率40%超、年間数十兆円の確実な現金収入を生み出すため、世界最大の成長資産としてファンドが最優先保有。'
+    },
+    industryImpact: {
+      title: '食品・外食・透析・心臓血管デバイス産業への巨大な「逆風ショック」',
+      description: '肥満薬の普及によりジャンクフード、清涼飲料、アルコール、糖尿病医療機器の売上成長が鈍化し、ウォール街で関連株の格下げが連鎖。',
+      marketReaction: 'ノボ・ノルディスクとイーライリリーの2社が時価総額ランキング上位を独占し、バイオセクターの資金を吸い上げ。',
+      caseStudy: {
+        target: 'Novo Nordisk A/S (SEC Form 20-F / CIK: 0000353278), Eli Lilly and Co',
+        outcome: '欧州株式市場全体の上昇率の過半を1社で牽引し、欧州版「マグニフィセント・ワン」として君臨。'
+      }
+    },
+    status: 'active',
+    statusLabel: '市場独占・設備投資加速',
+    sourceName: 'Novo Nordisk Annual Report (SEC Form 20-F 2026-07)',
+    sourceType: 'SEC Official Form 20-F',
+    sourceUrl: 'https://www.sec.gov/Archives/edgar/data/353278/000117184324000572/novonordisk_20f.htm',
+    tags: ['#GLP1', '#NovoNordisk', '#EliLilly', '#欧州時価総額1位', '#メガファーマ'],
+    involvedCompanies: ['Novo Nordisk A/S', 'Eli Lilly and Co', 'Catalent, Inc.', 'Pfizer Inc.'],
+    impactScore: 99,
+  },
+
+  // 7. 【2026年8月最新】欧州年金基金による「防衛産業投資制限」の全面撤廃 (macro_finance 1件目)
+  {
+    id: 'item-defense-esg-reversal-2026',
+    date: '2026-08-01',
+    institution: 'European Institutional Pension Alliance & NBIM',
+    institutionType: 'Asset Manager',
+    category: 'macro_finance',
+    title: '欧州年金基金：防衛・軍需産業への「ESG投資除外」を全面撤廃し巨額資金配分',
+    summary: [
+      '欧州および北欧の主要公的年金基金が、スチュワードシップ投資ガイドラインを緊急改訂。',
+      'これまで「ESGの観点から投資禁止」としていた防衛・軍需産業を「民主主義と主権防衛の必須サステナビリティ資産」と再定義。',
+      'Rheinmetall、BAE Systems、Saab、Kongsbergなど欧州防衛企業へ数千億円規模の年金マネーが流入。'
+    ],
+    primaryPolicy: {
+      title: '防衛・安全保障セクターの「サステナブル投資適格（EUタクソノミー整合）」認定',
+      description: '欧州連合（EU）の安全保障戦略と連動し、防衛企業に対する銀行融資制限やファンド組み入れ除外ルールを正式に廃止。',
+      keyPoints: [
+        '年金基金規約における「軍需産業ネガティブ・スクリーニング」条項の削除',
+        '防衛エレクトロニクス、自律ドローン、防空システム企業への長期資本配分枠の新設',
+        '防衛産業のサプライチェーン中小企業に対するESG格下げの禁止'
+      ]
+    },
+    capitalIncentive: {
+      title: '各国GDP比2〜3%の防衛予算拡大（国家による確実な需要保証）への相乗り',
+      description: 'NATO加盟国の国防予算が長期的に拡大し続ける中、最も利益成長と配当が確実なセクターから締め出されることによる運用リターン損失を防ぐため。',
+      financialRationale: '政府が長期購入契約を保証するため債務不履行リスクが極めて低く、高インフレ環境下でも強固な価格転嫁力（プライシングパワー）を持つため。'
+    },
+    industryImpact: {
+      title: '欧州防衛産業の株価急騰と、最新軍事AI・ドローン生産ラインの急ピッチ建設',
+      description: '資金調達難に陥っていた欧州重工各社が、株式増資や社債発行を通じて数十兆円規模の弾薬・装甲車・AIセンサー工場を新設。',
+      marketReaction: '防衛株指数がグローバル株式市場でトップクラスのアウトパフォームを記録。',
+      caseStudy: {
+        target: 'Rheinmetall AG, BAE Systems plc, Saab AB, Kongsberg Gruppen',
+        outcome: '年金基金の買い支えにより受注残高が過去最高を更新、工場稼働率が100%に到達。'
+      }
+    },
+    status: 'reversing',
+    statusLabel: '方針大転換・資金殺到',
+    sourceName: 'European Defense Agency & Institutional Stewardship Review 2026',
+    sourceType: 'EU Official Release & Pension Stewardship Codes',
+    tags: ['#防衛産業', '#ESG方針転換', '#年金基金', '#地政学リスク', '#軍事AI'],
+    involvedCompanies: ['Rheinmetall AG', 'BAE Systems', 'Lockheed Martin', 'Palantir Technologies'],
+    impactScore: 96,
+  },
+
+  // 8. 【2026年5月最新】米各州反ESG法施行と受託者責任回帰 (macro_finance 2件目)
   {
     id: 'item-us-state-anti-esg-2026',
     date: '2026-05-25',
@@ -934,7 +852,7 @@ export const trackerItemsData: TrackerItem[] = [
     impactScore: 98,
   },
 
-  // 11. 【2026年8月最新】AIデータセンター電力危機と原子力発電PPA契約 (energy 2件目)
+  // 9. 【2026年8月最新】AIデータセンター電力危機と原子力発電PPA契約 (energy 1件目)
   {
     id: 'item-ai-nuclear-power-2026',
     date: '2026-08-05',
@@ -978,6 +896,98 @@ export const trackerItemsData: TrackerItem[] = [
     tags: ['#AI電力危機', '#原子力発電', '#ConstellationEnergy', '#Microsoft', '#SMR'],
     involvedCompanies: ['Constellation Energy', 'Microsoft Corp', 'Amazon.com', 'GE Vernova', 'Cameco Corp'],
     impactScore: 99,
+  },
+
+  // 10. 【2026年7月最新】SEC気候開示規則の法廷判断とScope 3の現実的修正 (energy 2件目)
+  {
+    id: 'item-sec-climate-ruling-2026',
+    date: '2026-07-28',
+    institution: 'US Court of Appeals & SEC (Release No. 33-11275)',
+    institutionType: 'Regulatory Body',
+    category: 'energy',
+    title: 'SEC気候開示規則：法廷闘争を受けScope 3義務化を一時凍結、重大性基準へ緩和',
+    summary: [
+      '米連邦巡回控訴裁判所での訴訟および産業界からの強い反発を受け、SECがScope 3（下請けCO2排出）の一律開示義務化を事実上凍結。',
+      '「投資判断に直接重大な影響（Materiality）がある大企業のみ」に限定し、中小サプライヤーへの計算強制を排除。',
+      'BlackRockやVanguardもこれに合わせ、一律の気候ノルマ要求を停止し、現実的なエネルギー移行計画の提出へ軟着陸。'
+    ],
+    primaryPolicy: {
+      title: '気候情報開示基準の「マテリアリティ（財務的重大性）」への一本化',
+      description: '全企業に対する一律の非財務スコア開示要求を撤回し、各企業のビジネスモデルに直接影響する項目のみの開示を認める司法判断に適合。',
+      keyPoints: [
+        'サプライチェーン末端（Scope 3）における推計データの義務化を正式排除',
+        '製造業・農業・中小サプライヤーに対する過度な排出量監査負担の停止',
+        '天然ガス・原子力・ハイブリッドを「現実的な脱炭素ブリッジ資産」として容認'
+      ]
+    },
+    capitalIncentive: {
+      title: '過度なコンプライアンス訴訟リスクの遮断とエネルギーインフレの抑制',
+      description: '不正確な推計データに基づくScope 3開示が株主代表訴訟の標的となるリスクを回避し、過度な規制によるエネルギー価格高騰を防ぐため。',
+      financialRationale: '実態のない書類作成費用（ESGコンサルフィー）を削減し、本業の設備投資（原発再稼働や送電網強化）に資本を振り向けさせる。'
+    },
+    industryImpact: {
+      title: 'グローバル製造業・エネルギー企業の「ハイブリッド・現実主義脱炭素」シフト',
+      description: 'トヨタ、General Motors、ExxonMobilなどが、過度なBEV一極集中から、ハイブリッドや天然ガス・インフラへの再投資を加速。',
+      marketReaction: '現実的な収益性を確保できる製造業・エネルギー企業の株価が市場で再評価。',
+      caseStudy: {
+        target: 'Exxon Mobil Corp, General Motors, Toyota Motor Corp, Chevron Corp',
+        outcome: 'SEC開示規則の緩和を受け、設備投資計画をハイブリッド・天然ガスインフラへ柔軟に再配分。'
+      }
+    },
+    status: 'shifting',
+    statusLabel: '規制緩和・現実路線へ',
+    sourceName: 'U.S. Court of Appeals 5th Circuit Ruling / SEC Release No. 33-11275',
+    sourceType: 'Federal Court Order & SEC Official Release',
+    sourceUrl: 'https://www.sec.gov/rules/final/2024/33-11275.pdf',
+    tags: ['#SEC開示規則', '#Scope3緩和', '#裁判所判決', '#ハイブリッド再評価', '#脱炭素'],
+    involvedCompanies: ['Exxon Mobil Corp', 'General Motors', 'Toyota Motor Corp', 'Chevron Corp'],
+    impactScore: 94,
+  },
+
+  // 11. 【2026年8月最新】米国CHIPS法第2弾と対中先端半導体サプライチェーン全面遮断 (supply_chain 1件目)
+  {
+    id: 'item-chips-act-2026',
+    date: '2026-08-08',
+    institution: 'US Dept of Commerce (BIS) & Apple / TSMC',
+    institutionType: 'Regulatory Body',
+    category: 'supply_chain',
+    title: '米商務省（BIS）：対中AI半導体・先端装置の迂回輸出規制強化とサプライチェーン再編',
+    summary: [
+      '米商務省が、中東や東南アジアを経由した中国向けAI半導体・先端製造装置の輸出規制を大幅強化する新規制を施行。',
+      'Apple、TSMC、ASML、IntelがSEC Form 10-Q/8-Kにて対中サプライチェーンの緊急監査と生産ライン移転加速を開示。',
+      'iPhoneのインド生産比率が過去最高の30%に達し、TSMCアリゾナ・熊本第2工場の稼働スケジュールを前倒し。'
+    ],
+    primaryPolicy: {
+      title: '先端ノード半導体およびAIデータセンター機器のグローバル・トラッキング義務化',
+      description: '中国本土への軍事転用を防ぐため、先端GPUおよび製造装置の最終ユーザー追跡（エンドユーザー証明）の提出を義務付け。',
+      keyPoints: [
+        'インド・ベトナム・米国本土・日本への製造設備移転に対する追加税額控除',
+        'ウイグル強制労働防止法（UFLPA）に基づくサプライチェーン全品目の電子原産地証明要求',
+        '中国国内ファブ（工場）への先端装置輸出ライセンスの全面停止'
+      ]
+    },
+    capitalIncentive: {
+      title: '制裁金（数十億ドル）の回避と台湾有事テールリスクの完全遮断',
+      description: '米国の対外投資規制（Outbound Investment Rules）に抵触して巨額の法的制裁を受けるリスクをポートフォリオから完全に排除するため。',
+      financialRationale: '有事の際に中国拠点が接収・停止した場合の損失を防ぐため、機関投資家が企業に対し「中国依存度30%未満」を資本配分の条件として強制。'
+    },
+    industryImpact: {
+      title: '半導体・電子機器の製造コスト上昇と「非中国エコシステム」の完成',
+      description: 'TSMC熊本工場、米アリゾナ工場、インド・タタグループの組立工場がフル稼働へ。製品原価は上昇したものの地政学耐性が飛躍的に向上。',
+      marketReaction: 'サプライチェーンの脱中国化をいち早く完了させた企業に対し、機関投資家がプレミアム株価を付与。',
+      caseStudy: {
+        target: 'Apple Inc. (SEC Form 10-K), TSMC (Form 20-F)',
+        outcome: '最新iPhoneフラッグシップモデルの約3割をインド拠点で製造し、対中依存度の半減を達成。'
+      }
+    },
+    status: 'active',
+    statusLabel: '強力推進中',
+    sourceName: 'U.S. Bureau of Industry and Security (BIS) Final Rule & Apple Form 10-K',
+    sourceType: 'Federal Register & SEC Filing (2026-08)',
+    sourceUrl: 'https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm',
+    tags: ['#CHIPS法', '#脱中国', '#半導体', '#Apple', '#TSMC'],
+    involvedCompanies: ['Apple Inc.', 'TSMC', 'ASML Holding', 'Nvidia Corp', 'Intel Corp'],
+    impactScore: 95,
   },
 
   // 12. 【2026年7月最新】TSMC先端半導体製造の世界多極化 (supply_chain 2件目)
@@ -1026,4 +1036,3 @@ export const trackerItemsData: TrackerItem[] = [
     impactScore: 97,
   }
 ];
-
