@@ -143,16 +143,16 @@ export const flowNodesData: FlowNode[] = [
   },
 ];
 
-// 3. 世界トップ10 資産運用・巨大資本マトリクス（公式AUMランキング完全準拠）
+// 3. 世界トップ10 資産運用・巨大資本マトリクス（2026年最新公開報告・RankiaPro完全準拠）
 export const topAssetManagersData: AssetManagerProfile[] = [
   {
     rank: 1,
     id: 'blackrock',
-    name: 'BlackRock, Inc. (ブラックロック)',
+    name: 'ブラックロック (BlackRock)',
     country: '米国 🇺🇸',
     headquarters: 'ニューヨーク (CIK: 0001364742)',
-    aum: '約 $10.5兆 〜 11.5兆 (約1,750兆円)',
-    aumNum: 11500,
+    aum: '約 $14.0兆 〜 15.3兆 (約2,200兆円)',
+    aumNum: 14500,
     type: 'Index / Passive Giant',
     majorHoldings: [
       { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '7.2%', sector: 'Big Tech' },
@@ -179,17 +179,17 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '資本コストを意識しない経営陣の選任案に反対。'
       }
     ],
-    votingStyle: '世界最大の資産規模と議決権行使力を持ち、ガイドライン変更が全世界の企業方針を直撃。',
+    votingStyle: '世界最大。iShares（ETF）やアラジン（運用システム）で圧倒的シェア。',
     recentShift: '公式文書から「ESG」用語を事実上排除し、法規制リスク・財務リターン最優先へ急速に軌道修正。'
   },
   {
     rank: 2,
     id: 'vanguard',
-    name: 'Vanguard Group Inc (バンガード)',
+    name: 'バンガード (Vanguard Group)',
     country: '米国 🇺🇸',
     headquarters: 'ペンシルベニア (CIK: 0000102909)',
-    aum: '約 $9.3兆 〜 10.1兆 (約1,550兆円)',
-    aumNum: 10100,
+    aum: '約 $11.6兆 〜 12.5兆 (約1,850兆円)',
+    aumNum: 12000,
     type: 'Index / Passive Giant',
     majorHoldings: [
       { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '8.9%', sector: 'Big Tech' },
@@ -216,17 +216,17 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: 'イデオロギー的な株主提案には原則反対。'
       }
     ],
-    votingStyle: 'BlackRock以上の株式保有比率（8〜9%）を持つ筆頭株主。低コスト・長期実利主義。',
+    votingStyle: '低コストのインデックスファンド（投資信託・ETF）の世界的巨頭。',
     recentShift: '気候連合から早期脱退し、純粋なインデックス連動低コスト運用に集中。'
   },
   {
     rank: 3,
     id: 'fidelity',
-    name: 'Fidelity Investments (フィデリティ)',
+    name: 'フィデリティ (Fidelity Investments)',
     country: '米国 🇺🇸',
     headquarters: 'ボストン (CIK: 0000035315)',
-    aum: '約 $5.5兆 〜 6.0兆 (約900兆円)',
-    aumNum: 5800,
+    aum: '約 $7.0兆 〜 7.1兆 (約1,100兆円)',
+    aumNum: 7050,
     type: 'Active / Multi-Asset',
     majorHoldings: [
       { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '5.1%', sector: 'Semiconductor / AI' },
