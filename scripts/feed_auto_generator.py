@@ -51,7 +51,7 @@ def fetch_sec_json(url: str) -> dict:
 
 def call_gemini_api(prompt: str, api_key: str) -> str:
     """Gemini API を直接 REST 呼び出し（外部ライブラリ依存ゼロ）"""
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
     headers = {'Content-Type': 'application/json'}
     payload = {
         "contents": [{

@@ -48,7 +48,7 @@
 
 * **Frontend**: React 19 + TypeScript + Vite + Tailwind CSS + Lucide Icons
 * **Design & Typography**: Financial Times / Bloomberg Terminal 準拠（Newsreader + JetBrains Mono + Plus Jakarta Sans）
-* **Autonomous Pipeline Engine**: Python 3.13 + SEC EDGAR REST API + Google Gemini API (1.5 Flash)
+* **Autonomous Pipeline Engine**: Python 3.13 + SEC EDGAR REST API + Google Gemini API (2.0 Flash)
 * **CI/CD Automation**: GitHub Actions (`.github/workflows/auto_update.yml`, `.github/workflows/deploy.yml`)
 
 ---
