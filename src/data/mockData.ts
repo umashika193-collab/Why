@@ -143,7 +143,7 @@ export const flowNodesData: FlowNode[] = [
   },
 ];
 
-// 3. 世界トップ運用会社マトリクス（SEC Form 13F / 年次開示 完全検証済み）
+// 3. 世界トップ10 資産運用・巨大資本マトリクス（公式AUMランキング完全準拠）
 export const topAssetManagersData: AssetManagerProfile[] = [
   {
     rank: 1,
@@ -151,8 +151,8 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     name: 'BlackRock, Inc. (ブラックロック)',
     country: '米国 🇺🇸',
     headquarters: 'ニューヨーク (CIK: 0001364742)',
-    aum: '$10.5 兆 (約1,600兆円)',
-    aumNum: 10500,
+    aum: '約 $10.5兆 〜 11.5兆 (約1,750兆円)',
+    aumNum: 11500,
     type: 'Index / Passive Giant',
     majorHoldings: [
       { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '7.2%', sector: 'Big Tech' },
@@ -161,7 +161,6 @@ export const topAssetManagersData: AssetManagerProfile[] = [
       { ticker: 'SONY', name: 'Sony Group Corp (ADR)', stakeRatio: '4.8%', sector: 'Gaming / Media' },
       { ticker: '7974', name: '任天堂 (Nintendo)', stakeRatio: '4.1%', sector: 'Gaming' },
       { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '3.5%', sector: 'Automotive' },
-      { ticker: '9684', name: 'スクウェア・エニックス', stakeRatio: '4.5%', sector: 'Gaming' },
     ],
     coreDemands: [
       {
@@ -180,7 +179,7 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '資本コストを意識しない経営陣の選任案に反対。'
       }
     ],
-    votingStyle: 'グローバル最大の議決権行使力を持ち、ガイドライン変更が全世界の企業方針を直撃。',
+    votingStyle: '世界最大の資産規模と議決権行使力を持ち、ガイドライン変更が全世界の企業方針を直撃。',
     recentShift: '公式文書から「ESG」用語を事実上排除し、法規制リスク・財務リターン最優先へ急速に軌道修正。'
   },
   {
@@ -189,8 +188,8 @@ export const topAssetManagersData: AssetManagerProfile[] = [
     name: 'Vanguard Group Inc (バンガード)',
     country: '米国 🇺🇸',
     headquarters: 'ペンシルベニア (CIK: 0000102909)',
-    aum: '$9.3 兆 (約1,400兆円)',
-    aumNum: 9300,
+    aum: '約 $9.3兆 〜 10.1兆 (約1,550兆円)',
+    aumNum: 10100,
     type: 'Index / Passive Giant',
     majorHoldings: [
       { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '8.9%', sector: 'Big Tech' },
@@ -198,7 +197,6 @@ export const topAssetManagersData: AssetManagerProfile[] = [
       { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '8.2%', sector: 'Semiconductor / AI' },
       { ticker: 'GOOGL', name: 'Alphabet Inc.', stakeRatio: '7.6%', sector: 'Big Tech' },
       { ticker: 'TSLA', name: 'Tesla, Inc.', stakeRatio: '7.1%', sector: 'Automotive / Tech' },
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '4.2%', sector: 'Automotive' },
       { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '5.2%', sector: 'Gaming / Media' },
     ],
     coreDemands: [
@@ -218,17 +216,17 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: 'イデオロギー的な株主提案には原則反対。'
       }
     ],
-    votingStyle: 'BlackRock以上の株式保有比率（8〜9%）を持つ筆頭株主だが、個別経営への口出しは控えめで実利重視。',
+    votingStyle: 'BlackRock以上の株式保有比率（8〜9%）を持つ筆頭株主。低コスト・長期実利主義。',
     recentShift: '気候連合から早期脱退し、純粋なインデックス連動低コスト運用に集中。'
   },
   {
     rank: 3,
     id: 'fidelity',
-    name: 'Fidelity Management & Research (フィデリティ)',
+    name: 'Fidelity Investments (フィデリティ)',
     country: '米国 🇺🇸',
     headquarters: 'ボストン (CIK: 0000035315)',
-    aum: '$4.5 兆 (約680兆円)',
-    aumNum: 4500,
+    aum: '約 $5.5兆 〜 6.0兆 (約900兆円)',
+    aumNum: 5800,
     type: 'Active / Multi-Asset',
     majorHoldings: [
       { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '5.1%', sector: 'Semiconductor / AI' },
@@ -249,17 +247,48 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '資本効率の低いM&A議案への反対票。'
       }
     ],
-    votingStyle: 'ボトムアップのリサーチ力を活かし、個別企業の財務諸表に基づいた実利的な議決権行使。',
+    votingStyle: 'アクティブ運用の代表格。ボトムアップのリサーチ力を活かした個別企業重視の議決権行使。',
     recentShift: 'AI・半導体・GLP-1肥満薬などのメガトレンド銘柄への集中投資を強化。'
   },
   {
     rank: 4,
+    id: 'ubs',
+    name: 'UBSグループ (UBS Group)',
+    country: 'スイス 🇨🇭',
+    headquarters: 'チューリッヒ (CIK: 0001099696)',
+    aum: '約 $6.9 兆 (約1,050兆円)',
+    aumNum: 6900,
+    type: 'European ESG Leader',
+    majorHoldings: [
+      { ticker: 'NESN', name: 'Nestlé SA', stakeRatio: '3.6%', sector: 'Food & Beverage' },
+      { ticker: 'ASML', name: 'ASML Holding NV', stakeRatio: '3.2%', sector: 'Semiconductor' },
+      { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '2.8%', sector: 'Luxury' },
+      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '2.1%', sector: 'Automotive' },
+      { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '2.4%', sector: 'Gaming / Media' },
+    ],
+    coreDemands: [
+      {
+        title: '① 欧州基準の環境・人権デューデリジェンス（CSDDD適合）',
+        description: 'EUのサプライチェーン指令に基づき、強制労働や人権侵害のない調達網の証明を要求。',
+        enforcement: '不備のある企業の株式組み入れ比率を引き下げ。'
+      },
+      {
+        title: '② クレディ・スイス買収後のグローバル富裕層資産保全',
+        description: '欧州最大かつ世界最大のプライベートバンクとして、厳格なリスク管理と安定配当の確保。',
+        enforcement: '高レバレッジ・過剰負債を抱える企業への規律付け。'
+      }
+    ],
+    votingStyle: 'クレディ・スイス買収を経て欧州最大かつ世界最大のプライベートバンク。EU規制に準拠した厳格な基準。',
+    recentShift: '統合後の顧客資産規模が約6.9兆ドルへ急拡大し、欧州市場での発言力を飛躍的に向上。'
+  },
+  {
+    rank: 5,
     id: 'state_street',
-    name: 'State Street Global Advisors (SSGA / ステート・ストリート)',
+    name: 'ステート・ストリート (State Street)',
     country: '米国 🇺🇸',
     headquarters: 'ボストン (CIK: 0000093751)',
-    aum: '$4.1 兆 (約620兆円)',
-    aumNum: 4100,
+    aum: '約 $5.6兆 〜 6.3兆 (約900兆円)',
+    aumNum: 6000,
     type: 'Index / Passive Giant',
     majorHoldings: [
       { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.9%', sector: 'Big Tech' },
@@ -285,48 +314,17 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '集団的圧力から個別企業対話へ変更。'
       }
     ],
-    votingStyle: '「ビッグ3」の一角。コーポレートガバナンス（取締役会改革）に最も厳しい。',
+    votingStyle: 'SPDR（スパイダー）シリーズ等のETFや機関投資家向け運用に強み。コーポレートガバナンス改革に最も厳しい。',
     recentShift: '気候連合から脱退し、法的カルテル訴訟リスクを回避する姿勢を鮮明に。'
-  },
-  {
-    rank: 5,
-    id: 'ubs',
-    name: 'UBS Asset Management (UBS / スイス)',
-    country: 'スイス 🇨🇭',
-    headquarters: 'チューリッヒ (CIK: 0001099696)',
-    aum: '$3.9 兆 (約590兆円)',
-    aumNum: 3900,
-    type: 'European ESG Leader',
-    majorHoldings: [
-      { ticker: 'NESN', name: 'Nestlé SA', stakeRatio: '3.6%', sector: 'Food & Beverage' },
-      { ticker: 'ASML', name: 'ASML Holding NV', stakeRatio: '3.2%', sector: 'Semiconductor' },
-      { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '2.8%', sector: 'Luxury' },
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '2.1%', sector: 'Automotive' },
-      { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '2.4%', sector: 'Gaming / Media' },
-    ],
-    coreDemands: [
-      {
-        title: '① 欧州基準の環境・人権デューデリジェンス（CSDDD適合）',
-        description: 'EUのサプライチェーン指令に基づき、強制労働や人権侵害のない調達網の証明を要求。',
-        enforcement: '不備のある企業の株式組み入れ比率を引き下げ。'
-      },
-      {
-        title: '② クレディ・スイス統合後のグローバル資産保全',
-        description: '富裕層（プライベートバンク）顧客向けの厳格なリスク管理と安定配当の確保。',
-        enforcement: '高レバレッジ・過剰負債を抱える企業への規律付け。'
-      }
-    ],
-    votingStyle: '欧州法規制（SFDR/EUタクソノミー）に準拠した厳格なサステナビリティ・ガバナンス審査。',
-    recentShift: 'クレディ・スイス買収により欧州最大級の資産規模へ拡大。'
   },
   {
     rank: 6,
     id: 'jpmorgan',
-    name: 'JPMorgan Chase Asset Management (JPモルガン)',
+    name: 'JPモルガン・アセット・マネジメント (JPMorgan)',
     country: '米国 🇺🇸',
     headquarters: 'ニューヨーク (CIK: 0000019617)',
-    aum: '$3.4 兆 (約520兆円)',
-    aumNum: 3400,
+    aum: '約 $4.8兆 〜 5.1兆 (約750兆円)',
+    aumNum: 5000,
     type: 'Active / Multi-Asset',
     majorHoldings: [
       { ticker: 'AMZN', name: 'Amazon.com, Inc.', stakeRatio: '4.2%', sector: 'Big Tech / Retail' },
@@ -343,21 +341,52 @@ export const topAssetManagersData: AssetManagerProfile[] = [
       },
       {
         title: '② Climate Action 100+からの完全脱退',
-        description: '2024年初頭に気候連合から脱退を発表。「独自の投資判断と顧客利益の最大化に専念する」と表明。',
+        description: '気候連合から脱退を発表。「独自の投資判断と顧客利益の最大化に専念する」と表明。',
         enforcement: '画一的な化石燃料排除方針を停止し、エネルギー企業への選別投資を再開。'
       }
     ],
-    votingStyle: 'ウォール街の現実主義。実利とキャッシュフローに基づき、エネルギーや伝統産業も積極的に評価。',
+    votingStyle: '金融財閥系。オルタナティブ投資から伝統的資産まで幅広く展開し、キャッシュフローと実利を最重視。',
     recentShift: '環境連合からの脱退を主導し、米国金融界の実利主義回帰の先頭に立つ。'
   },
   {
     rank: 7,
+    id: 'goldman_sachs',
+    name: 'ゴールドマン・サックス (Goldman Sachs Asset Management)',
+    country: '米国 🇺🇸',
+    headquarters: 'ニューヨーク (CIK: 0000886982)',
+    aum: '約 $3.4兆 〜 3.6兆 (約530兆円)',
+    aumNum: 3500,
+    type: 'Active / Multi-Asset',
+    majorHoldings: [
+      { ticker: 'NVDA', name: 'Nvidia Corp', stakeRatio: '3.8%', sector: 'Semiconductor / AI' },
+      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '3.5%', sector: 'Big Tech' },
+      { ticker: 'LLY', name: 'Eli Lilly and Co', stakeRatio: '3.2%', sector: 'Healthcare' },
+      { ticker: 'TSM', name: 'TSMC (台湾積体電路製造)', stakeRatio: '2.8%', sector: 'Semiconductor' },
+      { ticker: 'SONY', name: 'Sony Group Corp', stakeRatio: '2.1%', sector: 'Gaming / Media' },
+    ],
+    coreDemands: [
+      {
+        title: '① プライベートエクイティ・プライベートクレジット主導の収益最大化',
+        description: '非公開市場の成長を取り込み、投資先企業に対する厳格な経営効率改善とスピーディーな事業売却・IPOを要求。',
+        enforcement: '低収益事業を温存する経営陣への事業再編要求。'
+      },
+      {
+        title: '② 機関投資家・富裕層向けソリューション最適化',
+        description: '市場変動に強いオルタナティブ資産配分と、確実なリターン創出を投資先企業に規律付け。',
+        enforcement: 'キャピタルアロケーション（資本配分）の厳格な監査。'
+      }
+    ],
+    votingStyle: '富裕層・機関投資家向けソリューションとグローバル投資に強み。ウォール街屈指のディール力。',
+    recentShift: 'プライベートクレジットおよびAI・インフラファンドへの資本配分を急速に拡大。'
+  },
+  {
+    rank: 8,
     id: 'capital_group',
-    name: 'Capital Group (キャピタル・グループ / 米国)',
+    name: 'キャピタル・グループ (Capital Group)',
     country: '米国 🇺🇸',
     headquarters: 'ロサンゼルス (世界最大級アクティブファンド)',
-    aum: '$2.6 兆 (約400兆円)',
-    aumNum: 2600,
+    aum: '約 $3.2兆 〜 3.4兆 (約500兆円)',
+    aumNum: 3300,
     type: 'Active / Multi-Asset',
     majorHoldings: [
       { ticker: 'TSM', name: 'TSMC (台湾積体電路製造)', stakeRatio: '4.8%', sector: 'Semiconductor' },
@@ -373,22 +402,22 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '短期的な利益捻出のためにR&Dを削る経営陣に対する交代圧力。'
       },
       {
-        title: '② 複数ファンドマネージャー制による多角的規律',
-        description: '1人のスターマネージャーに依存せず、独立した複数の運用者が個別に対話を行う「キャピタル・システム」を採用。',
+        title: '② 複数ファンドマネージャー制（キャピタル・システム）',
+        description: '独立した複数の運用者が個別に深くリサーチし、長期の株式・債券運用で企業と対話。',
         enforcement: 'コーポレートガバナンスと資本配分の規律を厳格に要求。'
       }
     ],
-    votingStyle: '米国最大のアクティブ運用会社。超長期保有を前提とした深く静かな経営対話。',
+    votingStyle: '老舗の独立系アクティブ運用会社。長期の株式・債券運用で有名。超長期保有が前提。',
     recentShift: '半導体サプライチェーンおよび次世代バイオ（肥満薬等）への長期大型配分を継続。'
   },
   {
-    rank: 8,
+    rank: 9,
     id: 'amundi',
-    name: 'Amundi Asset Management (アムンディ / 仏クレディ・アグリコル傘下)',
+    name: 'アムンディ (Amundi / クレディ・アグリコル系)',
     country: 'フランス 🇫🇷',
     headquarters: 'パリ (欧州大陸最大の運用会社)',
-    aum: '$2.4 兆 (約360兆円)',
-    aumNum: 2400,
+    aum: '約 $2.6兆 〜 2.7兆 (約400兆円)',
+    aumNum: 2650,
     type: 'European ESG Leader',
     majorHoldings: [
       { ticker: 'MC', name: 'LVMH Moët Hennessy', stakeRatio: '3.5%', sector: 'Luxury' },
@@ -409,71 +438,39 @@ export const topAssetManagersData: AssetManagerProfile[] = [
         enforcement: '地政学リスクに対応した現実的ガバナンスの要求。'
       }
     ],
-    votingStyle: '欧州ナンバーワンの運用規模。EUサステナビリティ開示規則（SFDR）に準拠した厳格な基準。',
+    votingStyle: '欧州系の純粋な資産運用会社としてはトップクラスの規模。EUサステナビリティ開示規則（SFDR）準拠。',
     recentShift: '防衛・航空宇宙（Airbus等）およびエネルギー企業の重要性を再評価。'
   },
   {
-    rank: 9,
-    id: 'gpfg_norway',
-    name: 'Government Pension Fund Global (ノルウェー政府年金 / NBIM)',
-    country: 'ノルウェー 🇳🇴',
-    headquarters: 'オスロ (世界最大単一ファンド)',
-    aum: '$1.7 兆 (約260兆円)',
-    aumNum: 1700,
-    type: 'Sovereign Wealth / Pension',
-    majorHoldings: [
-      { ticker: 'AAPL', name: 'Apple Inc.', stakeRatio: '1.4%', sector: 'Big Tech' },
-      { ticker: 'MSFT', name: 'Microsoft Corp', stakeRatio: '1.5%', sector: 'Big Tech' },
-      { ticker: '7974', name: '任天堂 (Nintendo)', stakeRatio: '2.5%', sector: 'Gaming' },
-      { ticker: '9684', name: 'スクウェア・エニックス', stakeRatio: '2.1%', sector: 'Gaming' },
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '1.8%', sector: 'Automotive' },
-      { ticker: '9984', name: 'ソフトバンクグループ', stakeRatio: '1.9%', sector: 'Tech / Investment' },
-    ],
-    coreDemands: [
-      {
-        title: '① 倫理基準による「投資完全除外（ブラックリスト）」の適用',
-        description: '非人道兵器（クラスター弾等）、タバコ、重大な人権侵害・環境破壊に関与した企業をポートフォリオから完全追放・売却。',
-        enforcement: '倫理委員会の勧告による保有株全売却・投資禁止指定（公表）。'
-      },
-      {
-        title: '② 議決権行使結果の「完全事前開示」',
-        description: '株主総会の5日前に自社の投票方針（賛否）をウェブサイトで完全公開し、他の投資家へ影響力を行使。',
-        enforcement: 'CEOと会長の兼務分離、過度な買収防衛策の廃止を徹底要求。'
-      }
-    ],
-    votingStyle: '世界70カ国・9,000社以上の上場株式の約1.5%を保有する世界最大の単一株式保有者。透明性が世界一高い。',
-    recentShift: '役員報酬の上限設定と、気候変動リスクに関するシナリオ分析開示の要求を強化。'
-  },
-  {
     rank: 10,
-    id: 'gpif_japan',
-    name: 'GPIF (年金積立金管理運用独立行政法人 / 日本)',
-    country: '日本 🇯🇵',
-    headquarters: '東京 (世界最大級公的年金)',
-    aum: '$1.6 兆 (約250兆円)',
-    aumNum: 1600,
-    type: 'Sovereign Wealth / Pension',
+    id: 'pimco_allianz',
+    name: 'PIMCO / アリアンツグループ (Allianz / PIMCO)',
+    country: 'ドイツ 🇩🇪 / 米国 🇺🇸',
+    headquarters: 'ミュンヘン・カリフォルニア (世界最大級債券運用)',
+    aum: '約 $2.3兆 〜 2.5兆 (約370兆円)',
+    aumNum: 2400,
+    type: 'Active / Multi-Asset',
     majorHoldings: [
-      { ticker: '7203', name: 'トヨタ自動車 (Toyota)', stakeRatio: '間接 5〜8%', sector: 'Automotive' },
-      { ticker: 'SONY', name: 'Sony Group (ソニー)', stakeRatio: '間接 5〜7%', sector: 'Gaming / Media' },
-      { ticker: '8306', name: '三菱UFJフィナンシャルG', stakeRatio: '間接 5〜7%', sector: 'Finance' },
-      { ticker: '7974', name: '任天堂 (Nintendo)', stakeRatio: '間接 5〜6%', sector: 'Gaming' },
-      { ticker: '6758', name: '日本国内全上場企業', stakeRatio: '信託口経由で上位株主', sector: 'All Domestic' },
+      { ticker: 'ALV', name: 'Allianz SE', stakeRatio: '5.0%', sector: 'Insurance / Finance' },
+      { ticker: 'AAPL', name: 'Apple Inc. (社債/株式)', stakeRatio: '2.1%', sector: 'Big Tech' },
+      { ticker: 'MSFT', name: 'Microsoft Corp (社債/株式)', stakeRatio: '2.0%', sector: 'Big Tech' },
+      { ticker: 'NEE', name: 'NextEra Energy (インフラ債)', stakeRatio: '2.5%', sector: 'Utility / Power' },
+      { ticker: 'JPM', name: 'JPMorgan Chase (債券/株式)', stakeRatio: '2.3%', sector: 'Finance' },
     ],
     coreDemands: [
       {
-        title: '① スチュワードシップ活動を通じた「PBR1倍割れ是正」',
-        description: '委託先運用会社（BlackRockや信託銀行等）に対し、低PBR・低ROE企業へのエンゲージメント強化を指示。',
-        enforcement: '成果を出せない運用会社への資金配分削減。'
+        title: '① 債務返済能力とバランスシート（財務健全性）の維持',
+        description: '債券（フィクスド・インカム）運用の世界最高峰として、過度な負債レバレッジを厳しく監視。',
+        enforcement: '信用格付け悪化リスクのあるM&Aや過剰配当計画への牽制。'
       },
       {
-        title: '② 政策保有株（持ち合い株）の解消と資本コスト経営',
-        description: '国内企業に対し、取引先との持ち合い株を売却し、成長投資や株主還元へ回すよう要請。',
-        enforcement: '株主総会での取締役選任議案の賛否判断に反映。'
+        title: '② インフラ・エネルギー転換債券への規律ある資本配分',
+        description: '電力網・再生可能エネルギーインフラの長期プロジェクトに対する安定資金供給とリターン確保。',
+        enforcement: '資金使途が不透明なサステナビリティボンドの引き受け停止。'
       }
     ],
-    votingStyle: '直接議決権を行使せず、委託先運用機関を通じて「市場全体の底上げ（ユニバーサル・オーナー）」を推進。',
-    recentShift: '国内企業のガバナンス改革と東証の要請を強力に後押しし、日本株の構造改革を牽引。'
+    votingStyle: '債券（フィクスド・インカム）のアクティブ運用で世界最高峰。財務健全性と信用リスク管理を最重視。',
+    recentShift: '高金利環境下でのインフラ債・プライベートクレジットへの配分を強化。'
   }
 ];
 
