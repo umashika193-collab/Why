@@ -7,7 +7,7 @@
 
 ## 🌐 ライブデモ（公開URL）
 
-👉 **[https://umashika193-collab.github.io/Why/](https://umashika193-collab.github.io/Why/)**
+👉 **[https://umashika193-collab.github.io/capgazer/](https://umashika193-collab.github.io/capgazer/)**
 
 ---
 
