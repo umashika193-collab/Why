@@ -16,13 +16,18 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="text-[10px] font-data tracking-widest text-terminal-accent uppercase mb-0.5">
-              INSTITUTIONAL INVESTOR ALLOCATION & MANDATE TRACKER
+              CAPGAZER // INSTITUTIONAL MONEY FLOW & POLICY OBSERVATORY
             </div>
-            <h1 className="text-xl sm:text-2xl font-serif text-white font-normal tracking-tight">
-              Capital Flow & Policy Tracker
-            </h1>
-            <p className="text-xs text-terminal-muted mt-0.5 font-sans">
-              世界主要機関投資家の投資方針、議決権行使、および実体経済（製品・サプライチェーン・雇用）への影響を追跡する独立データベース
+            <div className="flex items-baseline gap-3">
+              <h1 className="text-2xl sm:text-3xl font-serif text-white font-normal tracking-tight">
+                CapGazer
+              </h1>
+              <span className="text-sm font-sans text-terminal-muted border-l border-terminal-border pl-3 font-normal">
+                資本ゲイザー — 世の中のお金の流れを眺める
+              </span>
+            </div>
+            <p className="text-xs text-terminal-muted mt-1 font-sans">
+              世界の巨大資本（BlackRock等）の保有株式、投資方針、および産業現場への波及を米SEC一次開示から淡々と眺めるデータプラットフォーム
             </p>
           </div>
 
