@@ -1,5 +1,5 @@
 {
-  "lastUpdatedUtc": "2026-09-01T01:00:35.262694+00:00",
+  "lastUpdatedUtc": "2026-09-01T23:49:48.149779+00:00",
   "pipelineStatus": "SUCCESS_100_PERCENT",
   "sectionsAutomated": [
     "01. Macro Inflow Sectors (Real-time Flow)",
@@ -12,8 +12,8 @@
       "key": "TSM",
       "name": "TSMC (ADR)",
       "form": "6-K",
-      "date": "2026-08-25",
-      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000545/tsm-monthend6kx20260825.htm"
+      "date": "2026-09-01",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000552/tsm-dividendadjustmentx202.htm"
     }
   ]
 }
