@@ -1,5 +1,5 @@
 {
-  "lastUpdatedUtc": "2026-09-01T23:49:48.149779+00:00",
+  "lastUpdatedUtc": "2026-09-02T23:53:15.304838+00:00",
   "pipelineStatus": "SUCCESS_100_PERCENT",
   "sectionsAutomated": [
     "01. Macro Inflow Sectors (Real-time Flow)",
@@ -9,11 +9,11 @@
   "totalFilingsVerified": 1,
   "filings": [
     {
-      "key": "TSM",
-      "name": "TSMC (ADR)",
-      "form": "6-K",
-      "date": "2026-09-01",
-      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000552/tsm-dividendadjustmentx202.htm"
+      "key": "MSFT",
+      "name": "Microsoft Corp",
+      "form": "8-K",
+      "date": "2026-09-02",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526380280/d291965d8k.htm"
     }
   ]
 }
